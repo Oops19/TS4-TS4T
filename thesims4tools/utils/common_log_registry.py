@@ -634,9 +634,9 @@ class CommonLogRegistry(CommonService):
         if log_name in self._registered_logs[mod_name]:
             return self._registered_logs[mod_name][log_name]
         log = CommonLog(mod_identifier, log_name, custom_file_path=custom_file_path)
-        from thesims4tools.ts4t_configuration import TS4TConfiguration
-        if log_name in TS4TConfiguration().enable_logs:
-            log.enable(message_types=TS4TConfiguration().enable_logs[log_name])
+        from thesims4tools.ts4t_configuration import S4CLConfiguration
+        if log_name in S4CLConfiguration().enable_logs:
+            log.enable(message_types=S4CLConfiguration().enable_logs[log_name])
         self._registered_logs[mod_name][log_name] = log
         if first_time_log and mod_identifier is not None and _log is not None:
             _log.enable()

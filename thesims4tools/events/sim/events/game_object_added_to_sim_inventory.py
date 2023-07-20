@@ -14,8 +14,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from thesims4tools.utils.objects.common_object_utils import CommonObjectUtils
 
 
-class TS4TGameObjectAddedToSimInventoryEvent(CommonEvent):
-    """TS4TGameObjectAddedToSimInventoryEvent(sim_info, added_game_object)
+class S4CLGameObjectAddedToSimInventoryEvent(CommonEvent):
+    """S4CLGameObjectAddedToSimInventoryEvent(sim_info, added_game_object)
 
     An event that occurs when a Game Object is added to the inventory of a Sim.
 
@@ -36,7 +36,7 @@ class TS4TGameObjectAddedToSimInventoryEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TGameObjectAddedToSimInventoryEvent):
+            def handle_event(event_data: S4CLGameObjectAddedToSimInventoryEvent):
                 pass
 
     :param sim_info: The Sim that changed.

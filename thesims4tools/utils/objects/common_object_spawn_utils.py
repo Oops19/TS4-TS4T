@@ -15,7 +15,7 @@ from typing import Any, Callable, Union, Tuple, Iterator
 from thesims4tools.classes.math.common_location import CommonLocation
 from thesims4tools.classes.math.common_transform import CommonTransform
 from thesims4tools.classes.math.common_vector3 import CommonVector3
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.modinfo import ModInfo
 from carry.carry_postures import CarryingObject
 from objects.game_object import GameObject
@@ -27,7 +27,7 @@ from thesims4tools.utils.objects.common_object_ownership_utils import CommonObje
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class CommonObjectSpawnUtils(_HasTS4TClassLog):
+class CommonObjectSpawnUtils(_HasS4CLClassLog):
     """Utilities for creating, spawning, and despawning Objects.
 
     """
@@ -268,7 +268,7 @@ class CommonObjectSpawnUtils(_HasTS4TClassLog):
         reset_reason: ResetReason = ResetReason.RESET_EXPECTED,
         hard_reset_on_exception: bool = False,
         source: Any = None,
-        cause: str = 'TS4T Soft Reset'
+        cause: str = 'S4CL Soft Reset'
     ) -> bool:
         """soft_reset(game_object, reset_reason=ResetReason.RESET_EXPECTED, hard_reset_on_exception=False, source=None, cause=None)
 
@@ -282,7 +282,7 @@ class CommonObjectSpawnUtils(_HasTS4TClassLog):
         :type hard_reset_on_exception: bool, optional
         :param source: The source of the reset. Default is the GameObject.
         :type source: Any, optional
-        :param cause: The cause of the reset. Default is 'TS4T Soft Reset'.
+        :param cause: The cause of the reset. Default is 'S4CL Soft Reset'.
         :type cause: Any, optional
         :return: True, if the reset was successful. False, if not.
         :rtype: bool
@@ -314,7 +314,7 @@ class CommonObjectSpawnUtils(_HasTS4TClassLog):
         return False
 
     @classmethod
-    def hard_reset(cls, game_object: GameObject, reset_reason: ResetReason = ResetReason.RESET_EXPECTED, source: Any = None, cause: str = 'TS4T Hard Reset') -> bool:
+    def hard_reset(cls, game_object: GameObject, reset_reason: ResetReason = ResetReason.RESET_EXPECTED, source: Any = None, cause: str = 'S4CL Hard Reset') -> bool:
         """hard_reset(game_object, reset_reason=ResetReason.RESET_EXPECTED, source=None, cause=None)
 
         Perform a hard reset on an Object.
@@ -325,7 +325,7 @@ class CommonObjectSpawnUtils(_HasTS4TClassLog):
         :type reset_reason: ResetReason, optional
         :param source: The source of the reset. Default is the GameObject.
         :type source: Any, optional
-        :param cause: The cause of the reset. Default is 'TS4T Hard Reset'.
+        :param cause: The cause of the reset. Default is 'S4CL Hard Reset'.
         :type cause: Any, optional
         :return: True, if the reset was successful. False, if not.
         :rtype: bool
@@ -458,7 +458,7 @@ def _common_destroy_object(output: CommonConsoleCommandOutput, game_object: Game
     def _on_destroyed() -> None:
         output(f'SUCCESS: Object {game_object_str} successfully destroyed.')
 
-    if CommonObjectSpawnUtils.schedule_object_for_destroy(game_object, source='TS4T Command', cause='TS4T Command', on_destroyed=_on_destroyed):
+    if CommonObjectSpawnUtils.schedule_object_for_destroy(game_object, source='S4CL Command', cause='S4CL Command', on_destroyed=_on_destroyed):
         output(f'Successfully scheduled object {game_object} for destruction. Please wait.')
     else:
         output(f'FAILED: Failed to schedule object {game_object} for destruction.')

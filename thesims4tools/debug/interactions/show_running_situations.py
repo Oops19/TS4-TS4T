@@ -26,8 +26,8 @@ from thesims4tools.utils.resources.common_situation_utils import CommonSituation
 from thesims4tools.utils.sims.common_sim_situation_utils import CommonSimSituationUtils
 
 
-class TS4TDebugShowRunningSituationsInteraction(CommonImmediateSuperInteraction):
-    """TS4TDebugShowRunningSituationsInteraction(*_, **__)
+class S4CLDebugShowRunningSituationsInteraction(CommonImmediateSuperInteraction):
+    """S4CLDebugShowRunningSituationsInteraction(*_, **__)
 
     Show the currently running Situations of a Sim.
     """

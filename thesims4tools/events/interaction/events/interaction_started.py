@@ -15,8 +15,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TInteractionStartedEvent(CommonEvent):
-    """TS4TInteractionStartedEvent(interaction, sim_info, target)
+class S4CLInteractionStartedEvent(CommonEvent):
+    """S4CLInteractionStartedEvent(interaction, sim_info, target)
 
     An event that occurs when a Sim has started an interaction.
 
@@ -37,7 +37,7 @@ class TS4TInteractionStartedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TInteractionStartedEvent) -> bool:
+            def handle_event(event_data: S4CLInteractionStartedEvent) -> bool:
                 # Return True here to signify the event listener ran successfully. Return False or None here to signify the event listener failed to run.
                 return True
 

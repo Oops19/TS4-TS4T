@@ -12,8 +12,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSimChangedGenderOptionsCanReproduceEvent(CommonEvent):
-    """TS4TSimChangedGenderOptionsCanReproduceEvent(sim_info)
+class S4CLSimChangedGenderOptionsCanReproduceEvent(CommonEvent):
+    """S4CLSimChangedGenderOptionsCanReproduceEvent(sim_info)
 
     An event that occurs when a Pet Sim has changed whether they can reproduce or not.
 
@@ -34,7 +34,7 @@ class TS4TSimChangedGenderOptionsCanReproduceEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TSimChangedGenderOptionsCanReproduceEvent):
+            def handle_event(event_data: S4CLSimChangedGenderOptionsCanReproduceEvent):
                 pass
 
     :param sim_info: The Sim that changed.

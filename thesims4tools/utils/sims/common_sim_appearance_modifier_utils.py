@@ -190,8 +190,8 @@ class CommonSimAppearanceModifierUtils:
         appearance_tracker.add_appearance_modifier(modifier, modifier_guid, vanilla_priority, apply_to_all_outfits, source=source, additional_flags=additional_flags)
 
     @staticmethod
-    def remove_appearance_modifiers_by_guid(sim_info: SimInfo, modifier_guid: int, source: str = 'TS4T Removal') -> None:
-        """remove_appearance_modifiers_by_guid(sim_info, modifier_guid, source='TS4T Removal')
+    def remove_appearance_modifiers_by_guid(sim_info: SimInfo, modifier_guid: int, source: str = 'S4CL Removal') -> None:
+        """remove_appearance_modifiers_by_guid(sim_info, modifier_guid, source='S4CL Removal')
 
         Remove appearance modifiers from a Sim by their GUID.
 
@@ -199,7 +199,7 @@ class CommonSimAppearanceModifierUtils:
         :type sim_info: SimInfo
         :param modifier_guid: The GUID of the modifiers to remove.
         :type modifier_guid: int
-        :param source: The source of the removal. Default is "TS4T Removal".
+        :param source: The source of the removal. Default is "S4CL Removal".
         :type source: str, optional
         """
         appearance_tracker = CommonSimAppearanceModifierUtils.get_appearance_tracker(sim_info)

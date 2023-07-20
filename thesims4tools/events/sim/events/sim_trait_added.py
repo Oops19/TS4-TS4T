@@ -15,8 +15,8 @@ from traits.trait_tracker import TraitTracker
 from traits.traits import Trait
 
 
-class TS4TSimTraitAddedEvent(CommonEvent):
-    """TS4TSimTraitAddedEvent(sim_info, trait, trait_tracker)
+class S4CLSimTraitAddedEvent(CommonEvent):
+    """S4CLSimTraitAddedEvent(sim_info, trait, trait_tracker)
 
     An event that occurs when a Trait is added to a Sim.
 
@@ -37,7 +37,7 @@ class TS4TSimTraitAddedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TSimTraitAddedEvent):
+            def handle_event(event_data: S4CLSimTraitAddedEvent):
                 pass
 
     :param sim_info: The Sim that changed.

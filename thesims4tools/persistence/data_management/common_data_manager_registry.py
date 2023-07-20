@@ -11,8 +11,8 @@ All modifications by and copyright Oops19.
 from typing import Union, Dict, Any, Type, Callable
 
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.save.events.save_loaded import TS4TSaveLoadedEvent
-from thesims4tools.events.save.events.save_saved import TS4TSaveSavedEvent
+from thesims4tools.events.save.events.save_loaded import S4CLSaveLoadedEvent
+from thesims4tools.events.save.events.save_saved import S4CLSaveSavedEvent
 from thesims4tools.logging.has_class_log import HasClassLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
@@ -180,13 +180,13 @@ class CommonDataManagerRegistry(CommonService, HasClassLog):
 
 # noinspection PyUnusedLocal
 @CommonEventRegistry.handle_events(ModInfo.get_identity())
-def _common_save_data_on_save_saved(event_data: TS4TSaveSavedEvent) -> bool:
+def _common_save_data_on_save_saved(event_data: S4CLSaveSavedEvent) -> bool:
     CommonDataManagerRegistry().save_data()
     return True
 
 
 # noinspection PyUnusedLocal
 @CommonEventRegistry.handle_events(ModInfo.get_identity())
-def _common_clear_data_on_save_loaded(event_data: TS4TSaveLoadedEvent) -> bool:
+def _common_clear_data_on_save_loaded(event_data: S4CLSaveLoadedEvent) -> bool:
     CommonDataManagerRegistry().clear_data()
     return True

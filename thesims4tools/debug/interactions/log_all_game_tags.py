@@ -23,7 +23,7 @@ from thesims4tools.utils.objects.common_object_utils import CommonObjectUtils
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class TS4TDebugLogAllGameTagsInteraction(CommonImmediateSuperInteraction):
+class S4CLDebugLogAllGameTagsInteraction(CommonImmediateSuperInteraction):
     """ Log All Game Tags of a Target. """
 
     # noinspection PyMissingOrEmptyDocstring

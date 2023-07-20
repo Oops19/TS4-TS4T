@@ -19,7 +19,7 @@ from thesims4tools.classes.testing.common_execution_result import CommonExecutio
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.common_species import CommonSpecies
 from thesims4tools.enums.enumtypes.common_int import CommonInt
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
     CommonConsoleCommandArgument
@@ -31,7 +31,7 @@ from thesims4tools.utils.sims.common_species_utils import CommonSpeciesUtils
 from thesims4tools.enums.motives_enum import CommonMotiveId
 
 
-class CommonSimMotiveUtils(_HasTS4TClassLog):
+class CommonSimMotiveUtils(_HasS4CLClassLog):
     """Utilities for Sim motives.
 
     .. note:: Motives are just another name for Sim Needs (Bladder, Hunger, Energy, etc.)

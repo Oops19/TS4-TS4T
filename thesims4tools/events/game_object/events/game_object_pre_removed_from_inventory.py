@@ -12,8 +12,8 @@ from objects.game_object import GameObject
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TGameObjectPreRemovedFromInventoryEvent(CommonEvent):
-    """TS4TGameObjectPreRemovedFromInventoryEvent(game_object)
+class S4CLGameObjectPreRemovedFromInventoryEvent(CommonEvent):
+    """S4CLGameObjectPreRemovedFromInventoryEvent(game_object)
 
     An event that occurs before a Game Object has been removed from the inventory of something.
 
@@ -34,7 +34,7 @@ class TS4TGameObjectPreRemovedFromInventoryEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TGameObjectPreRemovedFromInventoryEvent):
+            def handle_event(event_data: S4CLGameObjectPreRemovedFromInventoryEvent):
                 pass
 
     :param game_object: The Game Object that will be removed from the inventory of something.

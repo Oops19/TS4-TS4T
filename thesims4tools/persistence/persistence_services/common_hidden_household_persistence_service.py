@@ -28,7 +28,7 @@ class CommonHiddenHouseholdPersistenceService(CommonPersistenceService):
         data_name = self._format_data_name(mod_identity, identifier=identifier)
         all_households = tuple(CommonHouseholdUtils.get_all_households_generator())
         if not all_households:
-            raise Exception(f'Households have not been loaded yet, but data with name {data_name} is attempting to be loaded! Please try to use the data after the households have been loaded instead. (Households are available when the TS4TZoneLateLoadEvent event is dispatched)')
+            raise Exception(f'Households have not been loaded yet, but data with name {data_name} is attempting to be loaded! Please try to use the data after the households have been loaded instead. (Households are available when the S4CLZoneLateLoadEvent event is dispatched)')
 
         self.log.format_with_message('Loading data.', data_name=data_name)
         loaded_data: Dict[str, Any] = None

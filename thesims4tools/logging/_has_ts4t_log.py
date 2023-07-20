@@ -13,10 +13,10 @@ from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
 
 
-class _HasTS4TLog(HasLog):
-    """_HasTS4TLog()
+class _HasS4CLLog(HasLog):
+    """_HasS4CLLog()
 
-    .. note:: This class should only be used by TS4T itself, do not inherit from this class in your own mods!
+    .. note:: This class should only be used by S4CL itself, do not inherit from this class in your own mods!
 
     """
 

@@ -14,8 +14,8 @@ from interactions.interaction_finisher import FinishingType
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSuperInteractionCancelledEvent(CommonEvent):
-    """TS4TSuperInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **kwargs)
+class S4CLSuperInteractionCancelledEvent(CommonEvent):
+    """S4CLSuperInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **kwargs)
 
     An event that occurs upon a super interaction being cancelled.
 
@@ -38,7 +38,7 @@ class TS4TSuperInteractionCancelledEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TSuperInteractionCancelledEvent) -> bool:
+            def handle_event(event_data: S4CLSuperInteractionCancelledEvent) -> bool:
                 # Return True from here to signify the event listener ran successfully. Return False or None here to signify the event listener failed to run successfully.
                 return True
 

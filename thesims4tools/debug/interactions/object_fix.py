@@ -20,8 +20,8 @@ from thesims4tools.utils.common_type_utils import CommonTypeUtils
 from thesims4tools.utils.objects.common_object_state_utils import CommonObjectStateUtils
 
 
-class TS4TDebugObjectFixInteraction(CommonImmediateSuperInteraction):
-    """TS4TDebugObjectFixInteraction(*_, **__)
+class S4CLDebugObjectFixInteraction(CommonImmediateSuperInteraction):
+    """S4CLDebugObjectFixInteraction(*_, **__)
 
     Set the target Object to a fixed state.
     """

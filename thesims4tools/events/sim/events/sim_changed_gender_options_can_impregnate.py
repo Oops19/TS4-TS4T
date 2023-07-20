@@ -12,8 +12,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSimChangedGenderOptionsCanImpregnateEvent(CommonEvent):
-    """TS4TSimChangedGenderOptionsCanImpregnateEvent(sim_info)
+class S4CLSimChangedGenderOptionsCanImpregnateEvent(CommonEvent):
+    """S4CLSimChangedGenderOptionsCanImpregnateEvent(sim_info)
 
     An event that occurs when a Human Sim has changed whether they can impregnate other Sims or not.
 
@@ -34,7 +34,7 @@ class TS4TSimChangedGenderOptionsCanImpregnateEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TSimChangedGenderOptionsCanImpregnateEvent):
+            def handle_event(event_data: S4CLSimChangedGenderOptionsCanImpregnateEvent):
                 pass
 
     :param sim_info: The Sim that changed.

@@ -15,7 +15,7 @@ from sims.sim_info import SimInfo
 from thesims4tools.classes.testing.common_execution_result import CommonExecutionResult
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.traits_enum import CommonTraitId
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.utils.sims.common_gender_utils import CommonGenderUtils
 from thesims4tools.utils.sims.common_sim_voice_utils import CommonSimVoiceUtils
 from thesims4tools.utils.sims.common_species_utils import CommonSpeciesUtils
@@ -23,7 +23,7 @@ from thesims4tools.utils.sims.common_trait_utils import CommonTraitUtils
 from traits.traits import Trait
 
 
-class CommonSimGenderOptionUtils(_HasTS4TClassLog):
+class CommonSimGenderOptionUtils(_HasS4CLClassLog):
     """Utilities for manipulating the Gender Options of Sims.
 
     """
@@ -636,7 +636,7 @@ class CommonSimGenderOptionUtils(_HasTS4TClassLog):
         if toilet_sitting is None:
             return CommonExecutionResult(False, reason='No toilet sitting trait was found for Sim.')
 
-        CommonTraitUtils.remove_trait(sim_info, CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_UNKNOWN)
+        CommonTraitUtils.remove_trait(sim_info, CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_UNKNOWN)
         if uses_toilet_standing:
             CommonTraitUtils.remove_trait(sim_info, toilet_sitting)
             add_trait_result = CommonTraitUtils.add_trait(sim_info, toilet_standing)
@@ -672,14 +672,14 @@ class CommonSimGenderOptionUtils(_HasTS4TClassLog):
             return CommonExecutionResult(False, reason='No toilet standing trait was found for Sim.')
 
         if can_use_toilet_standing and not CommonTraitUtils.has_trait(sim_info, toilet_standing):
-            CommonTraitUtils.remove_trait(sim_info, CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_UNKNOWN)
+            CommonTraitUtils.remove_trait(sim_info, CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_UNKNOWN)
             add_trait_result = CommonTraitUtils.add_trait(sim_info, toilet_standing)
             if not add_trait_result:
                 return add_trait_result
         elif CommonTraitUtils.has_trait(sim_info, toilet_standing):
             CommonTraitUtils.remove_trait(sim_info, toilet_standing)
             if not CommonSimGenderOptionUtils.uses_toilet_sitting(sim_info):
-                add_trait_result = CommonTraitUtils.add_trait(sim_info, CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_UNKNOWN)
+                add_trait_result = CommonTraitUtils.add_trait(sim_info, CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_UNKNOWN)
                 if not add_trait_result:
                     return add_trait_result
 
@@ -708,14 +708,14 @@ class CommonSimGenderOptionUtils(_HasTS4TClassLog):
             return CommonExecutionResult(False, reason='No toilet sitting trait was found for Sim.')
 
         if can_use_toilet_sitting and not CommonTraitUtils.has_trait(sim_info, toilet_sitting):
-            CommonTraitUtils.remove_trait(sim_info, CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_UNKNOWN)
+            CommonTraitUtils.remove_trait(sim_info, CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_UNKNOWN)
             add_trait_result = CommonTraitUtils.add_trait(sim_info, toilet_sitting)
             if not add_trait_result:
                 return add_trait_result
         elif CommonTraitUtils.has_trait(sim_info, toilet_sitting):
             CommonTraitUtils.remove_trait(sim_info, toilet_sitting)
             if not CommonSimGenderOptionUtils.uses_toilet_standing(sim_info):
-                add_trait_result = CommonTraitUtils.add_trait(sim_info, CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_UNKNOWN)
+                add_trait_result = CommonTraitUtils.add_trait(sim_info, CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_UNKNOWN)
                 if not add_trait_result:
                     return add_trait_result
 
@@ -737,13 +737,13 @@ class CommonSimGenderOptionUtils(_HasTS4TClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_TOILET_STANDING
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_STANDING_LARGE_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_STANDING_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_STANDING_SMALL_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_STANDING_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_STANDING_CAT
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_STANDING_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_STANDING_FOX
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_STANDING_FOX
         return None
 
     @staticmethod
@@ -760,13 +760,13 @@ class CommonSimGenderOptionUtils(_HasTS4TClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_TOILET_SITTING
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_SITTING_LARGE_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_SITTING_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_SITTING_SMALL_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_SITTING_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_SITTING_CAT
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_SITTING_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_TOILET_SITTING_FOX
+            return CommonTraitId.S4CL_GENDER_OPTIONS_TOILET_SITTING_FOX
         return None
 
     @classmethod

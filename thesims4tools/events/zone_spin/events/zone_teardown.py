@@ -13,8 +13,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class TS4TZoneTeardownEvent(CommonEvent):
-    """TS4TZoneTeardownEvent(zone, client, game_loaded=False, game_loading=False)
+class S4CLZoneTeardownEvent(CommonEvent):
+    """S4CLZoneTeardownEvent(zone, client, game_loaded=False, game_loading=False)
 
     An event that occurs upon a Zone being saved (Before it has been torn down).
 
@@ -39,7 +39,7 @@ class TS4TZoneTeardownEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TZoneTeardownEvent):
+            def handle_event(event_data: S4CLZoneTeardownEvent):
                 pass
 
     :param zone: The Zone being torn down.

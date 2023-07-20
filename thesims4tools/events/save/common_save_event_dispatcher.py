@@ -11,8 +11,8 @@ All modifications by and copyright Oops19.
 import os
 
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.save.events.save_loaded import TS4TSaveLoadedEvent
-from thesims4tools.events.save.events.save_saved import TS4TSaveSavedEvent
+from thesims4tools.events.save.events.save_loaded import S4CLSaveLoadedEvent
+from thesims4tools.events.save.events.save_saved import S4CLSaveSavedEvent
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.common_service import CommonService
 from thesims4tools.utils.common_injection_utils import CommonInjectionUtils
@@ -39,17 +39,17 @@ class CommonSaveEventDispatcher(CommonService):
         self._current_save_slot_guid = None
 
     def _on_game_save(self, save_game_data: SaveGameData):
-        CommonEventRegistry.get().dispatch(TS4TSaveSavedEvent(save_game_data))
+        CommonEventRegistry.get().dispatch(S4CLSaveSavedEvent(save_game_data))
 
     def _on_save_loaded(self) -> None:
         from thesims4tools.utils.save_load.common_save_utils import CommonSaveUtils
         current_save_slot_guid = CommonSaveUtils().get_save_slot_guid()
         if self._current_save_slot_guid is None:
             self._current_save_slot_guid = current_save_slot_guid
-            CommonEventRegistry.get().dispatch(TS4TSaveLoadedEvent())
+            CommonEventRegistry.get().dispatch(S4CLSaveLoadedEvent())
         elif self._current_save_slot_guid != current_save_slot_guid:
             self._current_save_slot_guid = current_save_slot_guid
-            CommonEventRegistry.get().dispatch(TS4TSaveLoadedEvent())
+            CommonEventRegistry.get().dispatch(S4CLSaveLoadedEvent())
 
 
 if not ON_RTD:

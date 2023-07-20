@@ -23,4 +23,4 @@ if hasattr(SimKnowledge, 'remove_known_trait'):
                 return
             return original(self, trait, *_, **__)
         except Exception as ex:
-            log.format_error_with_message('An error occurred while removing known traits. (This exception is not caused by TS4T, but rather caught)', owner=self, trait=trait, argles=_, kwargles=__, exception=ex)
+            log.format_error_with_message('An error occurred while removing known traits. (This exception is not caused by S4CL, but rather caught)', owner=self, trait=trait, argles=_, kwargles=__, exception=ex)

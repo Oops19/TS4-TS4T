@@ -21,7 +21,7 @@ from thesims4tools.enums.common_object_state_value_ids import CommonObjectStateV
 from thesims4tools.enums.common_object_quality import CommonObjectQuality
 from thesims4tools.enums.statistics_enum import CommonStatisticId
 from thesims4tools.enums.types.component_types import CommonComponentType
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
@@ -34,7 +34,7 @@ from statistics.commodity import Commodity
 from statistics.commodity_tracker import CommodityTracker
 
 
-class CommonObjectStateUtils(_HasTS4TClassLog):
+class CommonObjectStateUtils(_HasS4CLClassLog):
     """ Utilities for manipulating the state of Objects. """
 
     # noinspection PyMissingOrEmptyDocstring

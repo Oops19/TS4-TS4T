@@ -12,8 +12,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class TS4TBuildBuyEnterEvent(CommonEvent):
-    """TS4TBuildBuyEnterEvent(zone)
+class S4CLBuildBuyEnterEvent(CommonEvent):
+    """S4CLBuildBuyEnterEvent(zone)
 
     An event that occurs upon entering Build/Buy on a lot.
 
@@ -34,7 +34,7 @@ class TS4TBuildBuyEnterEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TBuildBuyEnterEvent):
+            def handle_event(event_data: S4CLBuildBuyEnterEvent):
                 pass
 
     :param zone: The zone the player has entered Build/Buy on.

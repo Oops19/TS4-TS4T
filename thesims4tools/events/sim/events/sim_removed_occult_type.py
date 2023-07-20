@@ -14,8 +14,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSimRemovedOccultTypeEvent(CommonEvent):
-    """TS4TSimRemovedOccultTypeEvent(sim_info, occult_type, occult_tracker)
+class S4CLSimRemovedOccultTypeEvent(CommonEvent):
+    """S4CLSimRemovedOccultTypeEvent(sim_info, occult_type, occult_tracker)
 
     An event that occurs when an OccultType has been removed from a Sim.
 
@@ -36,7 +36,7 @@ class TS4TSimRemovedOccultTypeEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TSimRemovedOccultTypeEvent):
+            def handle_event(event_data: S4CLSimRemovedOccultTypeEvent):
                 pass
 
     :param sim_info: The Sim the Occult Type was removed from.

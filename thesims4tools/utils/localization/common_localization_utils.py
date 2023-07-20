@@ -134,7 +134,7 @@ class CommonLocalizationUtils:
         """
         identifier_list = tuple(identifier_list)
         if not identifier_list:
-            return CommonStringId.TS4T_NONE
+            return CommonStringId.S4CL_NONE
 
         if len(identifier_list) <= 1:
             return CommonLocalizationUtils.combine_localized_strings(identifier_list, separator=CommonLocalizedStringSeparator.COMMA_SPACE)
@@ -161,7 +161,7 @@ class CommonLocalizationUtils:
         """
         identifier_list = tuple(identifier_list)
         if not identifier_list:
-            return CommonStringId.TS4T_NONE
+            return CommonStringId.S4CL_NONE
 
         if len(identifier_list) <= 1:
             return CommonLocalizationUtils.combine_localized_strings(identifier_list, separator=CommonLocalizedStringSeparator.COMMA_SPACE)

@@ -330,7 +330,7 @@ try:
     @CommonConsoleCommand(
         ModInfo.get_identity(),
         'ts4t.run_tests',
-        'Run any tests that are registered with TS4T (Only useful to mod authors)',
+        'Run any tests that are registered with S4CL (Only useful to mod authors)',
         command_arguments=(
             CommonConsoleCommandArgument('class_name', 'Text', 'If specified, only the tests located within the class matching this name will be run. If not specified, all registered tests will run.', is_optional=True, default_value='All Tests'),
             CommonConsoleCommandArgument('mod_name', 'Text', 'If specified, only the tests registered by the mod with this name will be run. If not specified, all registered tests by all mods will run.', is_optional=True, default_value='All Mods'),

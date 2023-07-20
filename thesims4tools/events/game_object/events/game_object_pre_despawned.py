@@ -12,8 +12,8 @@ from objects.game_object import GameObject
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TGameObjectPreDespawnedEvent(CommonEvent):
-    """TS4TGameObjectPreDespawnedEvent(game_object)
+class S4CLGameObjectPreDespawnedEvent(CommonEvent):
+    """S4CLGameObjectPreDespawnedEvent(game_object)
 
     An event that occurs before an Object is despawned.
 
@@ -34,7 +34,7 @@ class TS4TGameObjectPreDespawnedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TGameObjectPreDespawnedEvent):
+            def handle_event(event_data: S4CLGameObjectPreDespawnedEvent):
                 pass
 
     :param game_object: The Game Object that will be despawned.

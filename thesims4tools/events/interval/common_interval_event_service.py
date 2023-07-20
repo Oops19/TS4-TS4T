@@ -10,7 +10,7 @@ All modifications by and copyright Oops19.
 
 from typing import Callable, Any, List, Union
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.zone_update.events.zone_update_event import TS4TZoneUpdateEvent
+from thesims4tools.events.zone_update.events.zone_update_event import S4CLZoneUpdateEvent
 from thesims4tools.exceptions.common_exceptions_handler import CommonExceptionHandler
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
@@ -221,7 +221,7 @@ class CommonIntervalEventRegistry(CommonService):
 
     @staticmethod
     @CommonEventRegistry.handle_events(ModInfo.get_identity())
-    def _update_game_tick_on_zone_update(event_data: TS4TZoneUpdateEvent) -> bool:
+    def _update_game_tick_on_zone_update(event_data: S4CLZoneUpdateEvent) -> bool:
         from thesims4tools.events.zone_spin.common_zone_spin_event_dispatcher import CommonZoneSpinEventDispatcher
         if event_data.is_paused or CommonZoneSpinEventDispatcher().game_loading:
             return False

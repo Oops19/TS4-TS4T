@@ -12,8 +12,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class TS4TZoneUpdateEvent(CommonEvent):
-    """TS4TZoneUpdateEvent(zone, is_paused, ticks_since_last_update)
+class S4CLZoneUpdateEvent(CommonEvent):
+    """S4CLZoneUpdateEvent(zone, is_paused, ticks_since_last_update)
 
     An event that occurs when a Zone has been updated.
 
@@ -36,7 +36,7 @@ class TS4TZoneUpdateEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TZoneUpdateEvent):
+            def handle_event(event_data: S4CLZoneUpdateEvent):
                 pass
 
     :param zone: The Zone that was updated.

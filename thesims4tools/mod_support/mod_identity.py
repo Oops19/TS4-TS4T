@@ -59,7 +59,7 @@ class CommonModIdentity:
     def base_namespace(self) -> str:
         """The base namespace of the `.ts4script` file of a mod.
 
-        .. note:: TS4T has the base namespace of `thesims4tools`.
+        .. note:: S4CL has the base namespace of `thesims4tools`.
 
         :return: The base script namespace of a mod.
         :rtype: str

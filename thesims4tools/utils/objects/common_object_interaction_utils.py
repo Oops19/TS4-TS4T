@@ -307,8 +307,8 @@ class CommonObjectInteractionUtils(HasClassLog):
         log.debug('Done Logging Available Interactions.')
         log.disable()
         CommonBasicNotification(
-            CommonStringId.TS4T_LOG_ALL_INTERACTIONS,
-            CommonStringId.TS4T_DONE_LOGGING_ALL_INTERACTIONS,
+            CommonStringId.S4CL_LOG_ALL_INTERACTIONS,
+            CommonStringId.S4CL_DONE_LOGGING_ALL_INTERACTIONS,
             description_tokens=(CommonLogUtils.get_message_file_path(cls.get_mod_identity()), )
         ).show()
         return True

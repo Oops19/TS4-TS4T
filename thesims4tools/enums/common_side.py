@@ -101,11 +101,11 @@ class CommonSide(CommonInt):
         """
         from thesims4tools.enums.strings_enum import CommonStringId
         mapping = {
-            CommonSide.LEFT: CommonStringId.TS4T_LEFT,
-            CommonSide.RIGHT: CommonStringId.TS4T_RIGHT,
-            CommonSide.FRONT: CommonStringId.TS4T_FRONT,
-            CommonSide.BACK: CommonStringId.TS4T_BACK,
-            CommonSide.TOP: CommonStringId.TS4T_TOP,
-            CommonSide.BOTTOM: CommonStringId.TS4T_BOTTOM,
+            CommonSide.LEFT: CommonStringId.S4CL_LEFT,
+            CommonSide.RIGHT: CommonStringId.S4CL_RIGHT,
+            CommonSide.FRONT: CommonStringId.S4CL_FRONT,
+            CommonSide.BACK: CommonStringId.S4CL_BACK,
+            CommonSide.TOP: CommonStringId.S4CL_TOP,
+            CommonSide.BOTTOM: CommonStringId.S4CL_BOTTOM,
         }
         return mapping.get(value, value.name if hasattr(value, 'name') else str(value))

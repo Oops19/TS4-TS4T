@@ -16,14 +16,14 @@ from thesims4tools.dialogs.option_dialogs.options.common_dialog_option_context i
 from thesims4tools.dialogs.option_dialogs.options.objects.common_dialog_select_option import \
     CommonDialogSelectOption
 from thesims4tools.dialogs.option_dialogs.common_choose_object_option_dialog import CommonChooseObjectOptionDialog
-from thesims4tools.logging._has_ts4t_log import _HasTS4TLog
+from thesims4tools.logging._has_ts4t_log import _HasS4CLLog
 from thesims4tools.utils.common_icon_utils import CommonIconUtils
 from thesims4tools.utils.localization.common_localization_utils import CommonLocalizationUtils
 from thesims4tools.utils.objects.common_object_state_utils import CommonObjectStateUtils
 from thesims4tools.utils.objects.common_object_utils import CommonObjectUtils
 
 
-class CommonChangeObjectStateDialog(_HasTS4TLog):
+class CommonChangeObjectStateDialog(_HasS4CLLog):
     """ Open a dialog that allows changing the states of objects. """
 
     def __init__(self, game_object: GameObject, on_close: Callable[[], None] = None):

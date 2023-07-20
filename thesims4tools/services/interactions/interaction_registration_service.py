@@ -14,7 +14,7 @@ from objects.script_object import ScriptObject
 from services.terrain_service import TerrainService
 from sims.sim import Sim
 from thesims4tools.enums.enumtypes.common_int import CommonInt
-from thesims4tools.logging._has_ts4t_log import _HasTS4TLog
+from thesims4tools.logging._has_ts4t_log import _HasS4CLLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.common_service import CommonService
 from thesims4tools.utils.common_injection_utils import CommonInjectionUtils
@@ -114,7 +114,7 @@ class CommonScriptObjectInteractionHandler(CommonInteractionHandler):
         raise NotImplementedError()
 
 
-class CommonInteractionRegistry(CommonService, _HasTS4TLog):
+class CommonInteractionRegistry(CommonService, _HasS4CLLog):
     """Manage the registration of interactions to script objects, terrain, sims, etc.
 
     .. note:: Take a look at :class:`.CommonScriptObjectInteractionHandler` for more info and an example of usage.

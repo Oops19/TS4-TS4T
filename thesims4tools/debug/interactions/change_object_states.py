@@ -22,7 +22,7 @@ from thesims4tools.utils.objects.common_object_utils import CommonObjectUtils
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class TS4TDebugChangeObjectStatesInteraction(CommonImmediateSuperInteraction):
+class S4CLDebugChangeObjectStatesInteraction(CommonImmediateSuperInteraction):
     """ Change States of an Object. """
 
     # noinspection PyMissingOrEmptyDocstring

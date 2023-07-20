@@ -498,7 +498,7 @@ class CommonSimSpawnUtils:
             full_name_key=full_name_key,
             traits=traits,
             breed_name=breed_name if breed_name else 'Custom Breed' if CommonSpeciesUtils.is_animal_species(vanilla_species) else '',
-            breed_name_key=breed_name_key if breed_name_key else CommonStringId.TS4T_CUSTOM_BREED if CommonSpeciesUtils.is_animal_species(vanilla_species) else 0,
+            breed_name_key=breed_name_key if breed_name_key else CommonStringId.S4CL_CUSTOM_BREED if CommonSpeciesUtils.is_animal_species(vanilla_species) else 0,
         )
         (sim_info_list, _) = SimSpawner.create_sim_infos((sim_creator,), household=household, generate_deterministic_sim=True, creation_source=source)
         if not sim_info_list:
@@ -2544,7 +2544,7 @@ class CommonSimSpawnUtils:
         if sim is None:
             return True
         cause = cause or 'Sim despawned.'
-        if cls.hard_reset(sim_info, reset_reason=ResetReason.BEING_DESTROYED, source=cls, cause='TS4T Despawn'):
+        if cls.hard_reset(sim_info, reset_reason=ResetReason.BEING_DESTROYED, source=cls, cause='S4CL Despawn'):
             sim.destroy(source=source, cause=cause, **kwargs)
         return True
 
@@ -2615,14 +2615,14 @@ class CommonSimSpawnUtils:
         reset_reason: ResetReason = ResetReason.RESET_EXPECTED,
         hard_reset_on_exception: bool = False,
         source: Any = None,
-        cause: str = 'TS4T Soft Reset'
+        cause: str = 'S4CL Soft Reset'
     ) -> bool:
         """soft_reset(\
             sim_info,\
             reset_reason=ResetReason.RESET_EXPECTED,\
             hard_reset_on_exception=False,\
             source=None,\
-            cause='TS4T Soft Reset'\
+            cause='S4CL Soft Reset'\
         )
 
         Perform a soft reset on a Sim.
@@ -2636,7 +2636,7 @@ class CommonSimSpawnUtils:
         :type hard_reset_on_exception: bool, optional
         :param source: The source of the reset. Default is the GameObject.
         :type source: Any, optional
-        :param cause: Text indicating the cause of the reset. Default is 'TS4T Hard Reset'.
+        :param cause: Text indicating the cause of the reset. Default is 'S4CL Hard Reset'.
         :type cause: str, optional
         :return: True, if the reset was successful. False, if not.
         :rtype: bool
@@ -2712,13 +2712,13 @@ class CommonSimSpawnUtils:
         sim_info: SimInfo,
         reset_reason: ResetReason = ResetReason.RESET_EXPECTED,
         source: Any = None,
-        cause: str = 'TS4T Hard Reset'
+        cause: str = 'S4CL Hard Reset'
     ) -> bool:
         """hard_reset(
             sim_info,\
             reset_reason=ResetReason.RESET_EXPECTED,\
             source=None,\
-            cause='TS4T Hard Reset'\
+            cause='S4CL Hard Reset'\
         )
 
         Perform a hard reset on a SimInfo.
@@ -2729,7 +2729,7 @@ class CommonSimSpawnUtils:
         :type reset_reason: ResetReason, optional
         :param source: The source of the reset. Default is None.
         :type source: Any, optional
-        :param cause: Text indicating the cause of the reset. Default is 'TS4T Hard Reset'.
+        :param cause: Text indicating the cause of the reset. Default is 'S4CL Hard Reset'.
         :type cause: str, optional
         :return: True, if the reset was successful. False, if not.
         :rtype: bool

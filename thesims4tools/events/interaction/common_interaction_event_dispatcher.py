@@ -20,15 +20,15 @@ from interactions.utils.outcome import InteractionOutcome
 from interactions.utils.outcome_enums import OutcomeResult
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.interaction.events.interaction_cancelled import TS4TInteractionCancelledEvent
-from thesims4tools.events.interaction.events.interaction_outcome import TS4TInteractionOutcomeEvent
-from thesims4tools.events.interaction.events.interaction_post_queued import TS4TInteractionPostQueuedEvent
-from thesims4tools.events.interaction.events.interaction_pre_run import TS4TInteractionPreRunEvent
-from thesims4tools.events.interaction.events.interaction_queued import TS4TInteractionQueuedEvent
-from thesims4tools.events.interaction.events.interaction_run import TS4TInteractionRunEvent
-from thesims4tools.events.interaction.events.interaction_started import TS4TInteractionStartedEvent
-from thesims4tools.events.interaction.events.mixer_interaction_cancelled import TS4TMixerInteractionCancelledEvent
-from thesims4tools.events.interaction.events.super_interaction_cancelled import TS4TSuperInteractionCancelledEvent
+from thesims4tools.events.interaction.events.interaction_cancelled import S4CLInteractionCancelledEvent
+from thesims4tools.events.interaction.events.interaction_outcome import S4CLInteractionOutcomeEvent
+from thesims4tools.events.interaction.events.interaction_post_queued import S4CLInteractionPostQueuedEvent
+from thesims4tools.events.interaction.events.interaction_pre_run import S4CLInteractionPreRunEvent
+from thesims4tools.events.interaction.events.interaction_queued import S4CLInteractionQueuedEvent
+from thesims4tools.events.interaction.events.interaction_run import S4CLInteractionRunEvent
+from thesims4tools.events.interaction.events.interaction_started import S4CLInteractionStartedEvent
+from thesims4tools.events.interaction.events.mixer_interaction_cancelled import S4CLMixerInteractionCancelledEvent
+from thesims4tools.events.interaction.events.super_interaction_cancelled import S4CLSuperInteractionCancelledEvent
 from thesims4tools.exceptions.common_exceptions_handler import CommonExceptionHandler
 from thesims4tools.logging.has_log import HasLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
@@ -68,12 +68,12 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if interaction is None or interaction.sim is None:
             return None
         try:
-            if not CommonEventRegistry().dispatch(TS4TInteractionPreRunEvent(interaction, interaction_queue, timeline)):
+            if not CommonEventRegistry().dispatch(S4CLInteractionPreRunEvent(interaction, interaction_queue, timeline)):
                 return False
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_pre_run for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'
+                'Error occurred while running _on_interaction_pre_run for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'
                     .format(
                         pformat(interaction),
                         CommonInteractionUtils.get_interaction_short_name(interaction),
@@ -90,11 +90,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if interaction is None or interaction.sim is None:
             return None
         try:
-            CommonEventRegistry().dispatch(TS4TInteractionRunEvent(interaction, interaction_queue, run_result))
+            CommonEventRegistry().dispatch(S4CLInteractionRunEvent(interaction, interaction_queue, run_result))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_run for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Original Run Result: {}, Args: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_interaction_run for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Original Run Result: {}, Args: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -113,11 +113,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         try:
             source_sim_info = CommonSimUtils.get_sim_info(interaction.sim)
             target = interaction.target
-            CommonEventRegistry().dispatch(TS4TInteractionStartedEvent(interaction, source_sim_info, target))
+            CommonEventRegistry().dispatch(S4CLInteractionStartedEvent(interaction, source_sim_info, target))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_started for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_interaction_started for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -132,12 +132,12 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if interaction is None or interaction.sim is None:
             return None
         try:
-            if not CommonEventRegistry().dispatch(TS4TInteractionQueuedEvent(interaction, interaction_queue)):
+            if not CommonEventRegistry().dispatch(S4CLInteractionQueuedEvent(interaction, interaction_queue)):
                 return CommonTestResult(False, reason='Interaction \'{}\' Failed to Queue'.format(pformat(interaction)))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_queued for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_interaction_queued for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -152,11 +152,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if interaction is None or interaction.sim is None:
             return None
         try:
-            CommonEventRegistry().dispatch(TS4TInteractionPostQueuedEvent(interaction, interaction_queue, queue_result))
+            CommonEventRegistry().dispatch(S4CLInteractionPostQueuedEvent(interaction, interaction_queue, queue_result))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_post_queued for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Queue Result: {}, Args: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_interaction_post_queued for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Queue Result: {}, Args: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -172,11 +172,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if interaction.sim is None:
             return None
         try:
-            CommonEventRegistry().dispatch(TS4TInteractionOutcomeEvent(interaction, outcome, result))
+            CommonEventRegistry().dispatch(S4CLInteractionOutcomeEvent(interaction, outcome, result))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_outcome for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Outcome: {}, Result: {}'.format(
+                'Error occurred while running _on_interaction_outcome for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Outcome: {}, Result: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -191,11 +191,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if finishing_type is None:
             return None
         try:
-            CommonEventRegistry().dispatch(TS4TInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, ignore_must_run=ignore_must_run, **__))
+            CommonEventRegistry().dispatch(S4CLInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, ignore_must_run=ignore_must_run, **__))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Finishing Type: {}, Cancel Reason: {}, Ignore Must Run: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Finishing Type: {}, Cancel Reason: {}, Ignore Must Run: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -212,11 +212,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if finishing_type is None:
             return None
         try:
-            CommonEventRegistry().dispatch(TS4TMixerInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **__))
+            CommonEventRegistry().dispatch(S4CLMixerInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **__))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_mixer_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Finishing Type: {}, Cancel Reason: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_mixer_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Finishing Type: {}, Cancel Reason: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -232,11 +232,11 @@ class CommonInteractionEventDispatcherService(CommonService, HasLog):
         if interaction is None or finishing_type is None:
             return None
         try:
-            CommonEventRegistry().dispatch(TS4TSuperInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **__))
+            CommonEventRegistry().dispatch(S4CLSuperInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **__))
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _on_super_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Finishing Type: {}, Cancel Reason: {}, Kwargs: {}'.format(
+                'Error occurred while running _on_super_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Finishing Type: {}, Cancel Reason: {}, Kwargs: {}'.format(
                     pformat(interaction),
                     CommonInteractionUtils.get_interaction_short_name(interaction),
                     CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -259,7 +259,7 @@ def _common_on_interaction_run(original, self, timeline: Timeline, interaction: 
             except Exception as ex:
                 CommonExceptionHandler.log_exception(
                     None,
-                    'Error occurred while running _on_interaction_run for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+                    'Error occurred while running _on_interaction_run for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                         pformat(interaction),
                         CommonInteractionUtils.get_interaction_short_name(interaction),
                         CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -295,7 +295,7 @@ def _common_on_interaction_started(original, self, *_, **__) -> bool:
         except Exception as ex:
             CommonExceptionHandler.log_exception(
                 None,
-                'Error occurred while running _trigger_interaction_start_event for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+                'Error occurred while running _trigger_interaction_start_event for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                     pformat(self),
                     CommonInteractionUtils.get_interaction_short_name(self),
                     CommonInteractionUtils.get_interaction_display_name(self),
@@ -332,7 +332,7 @@ def _common_on_interaction_queued(original, self, interaction: Interaction, *_, 
             except Exception as ex:
                 CommonExceptionHandler.log_exception(
                     None,
-                    'Error occurred while running _on_interaction_queued for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+                    'Error occurred while running _on_interaction_queued for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                         pformat(interaction),
                         CommonInteractionUtils.get_interaction_short_name(interaction),
                         CommonInteractionUtils.get_interaction_display_name(interaction),
@@ -386,7 +386,7 @@ def _common_on_interaction_outcome(original, self, *_, **__) -> Any:
     except Exception as ex:
         CommonExceptionHandler.log_exception(
             None,
-            'Error occurred while running _on_interaction_outcome for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+            'Error occurred while running _on_interaction_outcome for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                 pformat(self),
                 CommonInteractionUtils.get_interaction_short_name(self),
                 CommonInteractionUtils.get_interaction_display_name(self),
@@ -420,7 +420,7 @@ def _common_on_interaction_cancelled(original, self, *_, **__) -> Any:
     except Exception as ex:
         CommonExceptionHandler.log_exception(
             None,
-            'Error occurred while running _on_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+            'Error occurred while running _on_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                 pformat(self),
                 CommonInteractionUtils.get_interaction_short_name(self),
                 CommonInteractionUtils.get_interaction_display_name(self),
@@ -454,7 +454,7 @@ def _common_on_mixer_interaction_cancelled(original, self, *_, **__) -> Any:
     except Exception as ex:
         CommonExceptionHandler.log_exception(
             None,
-            'Error occurred while running _on_mixer_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+            'Error occurred while running _on_mixer_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                 pformat(self),
                 CommonInteractionUtils.get_interaction_short_name(self),
                 CommonInteractionUtils.get_interaction_display_name(self),
@@ -488,7 +488,7 @@ def _common_on_super_interaction_cancelled(original, self, *_, **__) -> Any:
     except Exception as ex:
         CommonExceptionHandler.log_exception(
             None,
-            'Error occurred while running _on_super_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by TS4T, but rather caught) Args: {}, Kwargs: {}'.format(
+            'Error occurred while running _on_super_interaction_cancelled for interaction {} with short name \'{}\' and display name {}. (This exception is not caused by S4CL, but rather caught) Args: {}, Kwargs: {}'.format(
                 pformat(self),
                 CommonInteractionUtils.get_interaction_short_name(self),
                 CommonInteractionUtils.get_interaction_display_name(self),

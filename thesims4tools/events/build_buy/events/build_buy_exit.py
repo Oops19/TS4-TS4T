@@ -12,8 +12,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class TS4TBuildBuyExitEvent(CommonEvent):
-    """TS4TBuildBuyEnterEvent(zone)
+class S4CLBuildBuyExitEvent(CommonEvent):
+    """S4CLBuildBuyEnterEvent(zone)
 
     An event that occurs upon exiting Build/Buy on a lot.
 
@@ -34,7 +34,7 @@ class TS4TBuildBuyExitEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TBuildBuyExitEvent):
+            def handle_event(event_data: S4CLBuildBuyExitEvent):
                 pass
 
     :param zone: The zone the player has exited Build/Buy on.

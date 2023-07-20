@@ -18,8 +18,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class TS4TInteractionQueuedEvent(CommonEvent):
-    """TS4TInteractionQueuedEvent(interaction, interaction_queue)
+class S4CLInteractionQueuedEvent(CommonEvent):
+    """S4CLInteractionQueuedEvent(interaction, interaction_queue)
 
     An event that occurs upon a Sim adding an interaction to their interaction queue.
 
@@ -42,7 +42,7 @@ class TS4TInteractionQueuedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TInteractionQueuedEvent) -> bool:
+            def handle_event(event_data: S4CLInteractionQueuedEvent) -> bool:
                 # Return True here to allow the interaction to queue and to signify the event listener ran successfully. Return False or None here to prevent the interaction from being queued or to signify the event listener failed to run.
                 return True
 

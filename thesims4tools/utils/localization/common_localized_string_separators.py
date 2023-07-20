@@ -37,31 +37,31 @@ class CommonLocalizedStringSeparator(CommonInt):
 
     """
     # {String}{String}
-    NO_SEPARATOR: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_COMBINE_TWO_STRINGS
+    NO_SEPARATOR: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_COMBINE_TWO_STRINGS
     # {String} and {String}
-    AND: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_AND_STRING
+    AND: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_AND_STRING
     # {String} are {String}
-    ARE: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_ARE_STRING
+    ARE: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_ARE_STRING
     # {String}: {String}
     COLON_SPACE: 'CommonLocalizedStringSeparator' = CommonStringId.STRING_COLON_SPACE_STRING
     # {String}, {String}
     COMMA_SPACE: 'CommonLocalizedStringSeparator' = CommonStringId.STRING_COMMA_SPACE_STRING
     # {String}, and {String}
-    COMMA_SPACE_AND: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_COMMA_SPACE_AND_STRING
+    COMMA_SPACE_AND: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_COMMA_SPACE_AND_STRING
     # {String}, or {String}
-    COMMA_SPACE_OR: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_COMMA_SPACE_OR_STRING
+    COMMA_SPACE_OR: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_COMMA_SPACE_OR_STRING
     # {String}-{String}
     HYPHEN: 'CommonLocalizedStringSeparator' = CommonStringId.STRING_HYPHEN_STRING
     # {String} is {String}
-    IS: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_IS_STRING
+    IS: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_IS_STRING
     # {String}\n{String}
     NEWLINE: 'CommonLocalizedStringSeparator' = CommonStringId.STRING_NEWLINE_STRING
     # {String}\n\n{String}
     NEWLINE_NEWLINE: 'CommonLocalizedStringSeparator' = CommonStringId.STRING_NEWLINE_NEWLINE_STRING
     # {String} or {String}
-    OR: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_OR_STRING
+    OR: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_OR_STRING
     # {String}+{String}
-    PLUS: 'CommonLocalizedStringSeparator' = CommonStringId.TS4T_STRING_PLUS_STRING
+    PLUS: 'CommonLocalizedStringSeparator' = CommonStringId.S4CL_STRING_PLUS_STRING
     # {String} {String}
     SPACE: 'CommonLocalizedStringSeparator' = CommonStringId.STRING_SPACE_STRING
     # {String} ({String})

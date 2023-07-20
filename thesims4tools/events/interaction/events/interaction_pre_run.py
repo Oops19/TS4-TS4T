@@ -25,8 +25,8 @@ if not ON_RTD:
     from scheduling import Timeline
 
 
-class TS4TInteractionPreRunEvent(CommonEvent):
-    """TS4TInteractionPreRunEvent(interaction, interaction_queue, timeline)
+class S4CLInteractionPreRunEvent(CommonEvent):
+    """S4CLInteractionPreRunEvent(interaction, interaction_queue, timeline)
 
     An event that occurs upon a Sim running an interaction.
 
@@ -49,7 +49,7 @@ class TS4TInteractionPreRunEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TInteractionPreRunEvent) -> bool:
+            def handle_event(event_data: S4CLInteractionPreRunEvent) -> bool:
                 # Return True here to allow the interaction to run and to signify the event listener ran successfully. Return False or None here to prevent the interaction from being run or to signify the event listener failed to run.
                 return True
 

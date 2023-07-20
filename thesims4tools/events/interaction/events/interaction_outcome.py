@@ -14,8 +14,8 @@ from interactions.utils.outcome_enums import OutcomeResult
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TInteractionOutcomeEvent(CommonEvent):
-    """TS4TInteractionOutcomeEvent(interaction, outcome, outcome_result)
+class S4CLInteractionOutcomeEvent(CommonEvent):
+    """S4CLInteractionOutcomeEvent(interaction, outcome, outcome_result)
 
     An event that occurs after a Sim has performed an interaction.
 
@@ -36,7 +36,7 @@ class TS4TInteractionOutcomeEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TInteractionOutcomeEvent) -> bool:
+            def handle_event(event_data: S4CLInteractionOutcomeEvent) -> bool:
                 # Return True from here to signify the event listener ran successfully. Return False or None here to signify the event listener failed to run.
                 return True
 

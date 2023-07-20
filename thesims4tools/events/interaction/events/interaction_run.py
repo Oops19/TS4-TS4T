@@ -13,8 +13,8 @@ from interactions.interaction_queue import InteractionQueue
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TInteractionRunEvent(CommonEvent):
-    """TS4TInteractionRunEvent(interaction, interaction_queue, run_result)
+class S4CLInteractionRunEvent(CommonEvent):
+    """S4CLInteractionRunEvent(interaction, interaction_queue, run_result)
 
     An event that occurs after a Sim has run an interaction.
 
@@ -37,7 +37,7 @@ class TS4TInteractionRunEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TInteractionRunEvent) -> bool:
+            def handle_event(event_data: S4CLInteractionRunEvent) -> bool:
                 # Return True here to signify the event listener ran successfully. Return False or None here to signify the event listener failed to run.
                 return True
 

@@ -24,8 +24,8 @@ from thesims4tools.utils.sims.common_sim_name_utils import CommonSimNameUtils
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class TS4TDebugShowRunningAndQueuedInteractionsInteraction(CommonImmediateSuperInteraction):
-    """TS4TDebugShowRunningAndQueuedInteractionsInteraction(*_, **__)
+class S4CLDebugShowRunningAndQueuedInteractionsInteraction(CommonImmediateSuperInteraction):
+    """S4CLDebugShowRunningAndQueuedInteractionsInteraction(*_, **__)
 
     Show the currently running and queued interactions of a Sim.
     """

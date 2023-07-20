@@ -15,7 +15,7 @@ from date_and_time import TimeSpan
 from objects.game_object import GameObject
 from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.zone_spin.events.zone_teardown import TS4TZoneTeardownEvent
+from thesims4tools.events.zone_spin.events.zone_teardown import S4CLZoneTeardownEvent
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommandArgument, \
     CommonConsoleCommand
@@ -191,5 +191,5 @@ def _common_stop_all_debug_visual_effects(output: CommonConsoleCommandOutput):
 
 # noinspection PyUnusedLocal
 @CommonEventRegistry.handle_events(ModInfo.get_identity())
-def _common_stop_all_debug_visual_effects_on_zone_teardown(event_data: TS4TZoneTeardownEvent):
+def _common_stop_all_debug_visual_effects_on_zone_teardown(event_data: S4CLZoneTeardownEvent):
     _CommonVisualEffectCommandService().stop_all_visual_effects()

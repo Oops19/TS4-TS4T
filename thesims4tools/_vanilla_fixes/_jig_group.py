@@ -24,5 +24,5 @@ def _common_check_picked_object_has_slot_attribute(original, cls, picked_object)
     try:
         return original(picked_object)
     except Exception as ex:
-        log.format_error_with_message('An error occurred when checking if a picked object be a jig. (This exception is not caused by TS4T, but rather caught)', owner=cls, picked_object=picked_object, exception=ex)
+        log.format_error_with_message('An error occurred when checking if a picked object be a jig. (This exception is not caused by S4CL, but rather caught)', owner=cls, picked_object=picked_object, exception=ex)
     return False

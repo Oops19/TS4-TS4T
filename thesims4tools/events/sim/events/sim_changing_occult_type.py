@@ -14,8 +14,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSimChangingOccultTypeEvent(CommonEvent):
-    """TS4TSimChangingOccultTypeEvent(sim_info, occult_type, occult_tracker)
+class S4CLSimChangingOccultTypeEvent(CommonEvent):
+    """S4CLSimChangingOccultTypeEvent(sim_info, occult_type, occult_tracker)
 
     An event that occurs when a Sim is changing their current OccultType. (But before they have changed!)
 
@@ -38,7 +38,7 @@ class TS4TSimChangingOccultTypeEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TSimChangingOccultTypeEvent):
+            def handle_event(event_data: S4CLSimChangingOccultTypeEvent):
                 pass
 
     :param sim_info: The Sim that changing OccultTypes.

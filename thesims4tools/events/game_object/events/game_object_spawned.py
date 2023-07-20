@@ -12,8 +12,8 @@ from objects.game_object import GameObject
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TGameObjectSpawnedEvent(CommonEvent):
-    """TS4TGameObjectSpawnedEvent(game_object)
+class S4CLGameObjectSpawnedEvent(CommonEvent):
+    """S4CLGameObjectSpawnedEvent(game_object)
 
     An event that occurs after a Game Object has been spawned.
 
@@ -34,7 +34,7 @@ class TS4TGameObjectSpawnedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TGameObjectSpawnedEvent):
+            def handle_event(event_data: S4CLGameObjectSpawnedEvent):
                 pass
 
     :param game_object: The Game Object that was spawned.

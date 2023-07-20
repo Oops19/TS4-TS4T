@@ -16,7 +16,7 @@ from civic_policies.street_civic_policy_provider import StreetProvider
 from thesims4tools.enums.common_civic_policy_status_type import CommonCivicPolicyStatusType
 from thesims4tools.enums.common_street_civic_policy_ids import CommonStreetCivicPolicyId
 from thesims4tools.enums.common_venue_civic_policy_ids import CommonVenueCivicPolicyId
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand
 from thesims4tools.services.commands.common_console_command_output import CommonConsoleCommandOutput
@@ -25,7 +25,7 @@ from venues.civic_policies.venue_civic_policy import VenueCivicPolicy
 from venues.civic_policies.venue_civic_policy_provider import VenueCivicPolicyProvider
 
 
-class CommonCivicPolicyUtils(_HasTS4TClassLog):
+class CommonCivicPolicyUtils(_HasS4CLClassLog):
     """Utilities for manipulating civic policies."""
 
     # noinspection PyMissingOrEmptyDocstring

@@ -12,8 +12,8 @@ from objects.game_object import GameObject
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TGameObjectPreDeletedEvent(CommonEvent):
-    """TS4TGameObjectPreDeletedEvent(game_object)
+class S4CLGameObjectPreDeletedEvent(CommonEvent):
+    """S4CLGameObjectPreDeletedEvent(game_object)
 
     An event that occurs before a Game Object has been deleted.
 
@@ -34,7 +34,7 @@ class TS4TGameObjectPreDeletedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TGameObjectPreDeletedEvent):
+            def handle_event(event_data: S4CLGameObjectPreDeletedEvent):
                 pass
 
     :param game_object: The Game Object that will be deleted.

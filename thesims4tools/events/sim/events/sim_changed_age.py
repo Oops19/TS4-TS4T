@@ -13,8 +13,8 @@ from thesims4tools.enums.common_age import CommonAge
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSimChangedAgeEvent(CommonEvent):
-    """TS4TSimChangedAgeEvent(sim_info, old_age, new_age)
+class S4CLSimChangedAgeEvent(CommonEvent):
+    """S4CLSimChangedAgeEvent(sim_info, old_age, new_age)
 
     An event that occurs when a Sim has changed their current Age.
 
@@ -37,7 +37,7 @@ class TS4TSimChangedAgeEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TSimChangedAgeEvent):
+            def handle_event(event_data: S4CLSimChangedAgeEvent):
                 pass
 
     :param sim_info: The Sim that changed.

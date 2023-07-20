@@ -12,8 +12,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class TS4TZonePostLoadEvent(CommonEvent):
-    """TS4TZonePostLoadEvent(zone, game_loaded=False, game_loading=False)
+class S4CLZonePostLoadEvent(CommonEvent):
+    """S4CLZonePostLoadEvent(zone, game_loaded=False, game_loading=False)
 
     An event that occurs when the Zone has finished loading and the loading screen is no longer visible.
 
@@ -34,7 +34,7 @@ class TS4TZonePostLoadEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TZonePostLoadEvent):
+            def handle_event(event_data: S4CLZonePostLoadEvent):
                 pass
 
     :param zone: The Zone that was loaded.

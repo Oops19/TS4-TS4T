@@ -14,8 +14,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from thesims4tools.utils.sims.common_buff_utils import CommonBuffUtils
 
 
-class TS4TSimBuffAddedEvent(CommonEvent):
-    """TS4TSimBuffAddedEvent(sim_info, buff)
+class S4CLSimBuffAddedEvent(CommonEvent):
+    """S4CLSimBuffAddedEvent(sim_info, buff)
 
     An event that occurs when a Buff is added to a Sim.
 
@@ -36,7 +36,7 @@ class TS4TSimBuffAddedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TSimBuffAddedEvent):
+            def handle_event(event_data: S4CLSimBuffAddedEvent):
                 pass
 
     :param sim_info: The Sim that changed.

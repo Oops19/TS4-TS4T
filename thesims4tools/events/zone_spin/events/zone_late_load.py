@@ -12,12 +12,12 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class TS4TZoneLateLoadEvent(CommonEvent):
-    """TS4TZoneLateLoadEvent(zone, household_id, active_sim_id, game_loaded=False, game_loading=False)
+class S4CLZoneLateLoadEvent(CommonEvent):
+    """S4CLZoneLateLoadEvent(zone, household_id, active_sim_id, game_loaded=False, game_loading=False)
 
     An event that occurs when a Zone has finished spinning up.
 
-    .. note:: This event occurs after the :class:`.TS4TZoneEarlyLoadEvent` and before the :class:`.TS4TZoneFinishedLoadEvent`
+    .. note:: This event occurs after the :class:`.S4CLZoneEarlyLoadEvent` and before the :class:`.S4CLZoneFinishedLoadEvent`
 
     :Example usage:
 
@@ -36,7 +36,7 @@ class TS4TZoneLateLoadEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TZoneLateLoadEvent):
+            def handle_event(event_data: S4CLZoneLateLoadEvent):
                 pass
 
     :param zone: The Zone that has finished spinning up.

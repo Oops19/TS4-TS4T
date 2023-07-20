@@ -183,7 +183,7 @@ class CommonSimPregnancyUtils(HasClassLog):
             CommonObjectStateUtils.set_object_state(sim, CommonObjectStateValueId.PREGNANT_IN_LABOR)
         buff_id = cls.get_in_labor_buff(sim_info)
         if buff_id != -1:
-            result = CommonBuffUtils.add_buff(sim_info, buff_id, buff_reason=CommonStringId.TS4T_BUFF_REASON_FROM_DEBUG)
+            result = CommonBuffUtils.add_buff(sim_info, buff_id, buff_reason=CommonStringId.S4CL_BUFF_REASON_FROM_DEBUG)
             return result.result
         return True
 
@@ -445,13 +445,13 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_LARGE_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_SMALL_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_CAT
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_FOX
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_FOX
         return None
 
     @classmethod
@@ -468,13 +468,13 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_LARGE_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_SMALL_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_CAT
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_FOX
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_FOX
         return None
 
     @classmethod
@@ -491,13 +491,13 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_LARGE_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_SMALL_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_CAT
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_FOX
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_FOX
         return None
 
     @classmethod
@@ -514,13 +514,13 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_LARGE_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_SMALL_DOG
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_CAT
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_FOX
+            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_FOX
         return None
 
 

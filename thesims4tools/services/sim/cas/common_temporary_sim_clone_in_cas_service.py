@@ -13,8 +13,8 @@ from typing import List, Callable, Dict, Tuple
 from sims.outfits.outfit_enums import OutfitCategory, BodyType
 from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.sim.events.sim_set_current_outfit import TS4TSimSetCurrentOutfitEvent
-from thesims4tools.events.zone_spin.events.zone_late_load import TS4TZoneLateLoadEvent
+from thesims4tools.events.sim.events.sim_set_current_outfit import S4CLSimSetCurrentOutfitEvent
+from thesims4tools.events.zone_spin.events.zone_late_load import S4CLZoneLateLoadEvent
 from thesims4tools.logging.has_log import HasLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
@@ -275,11 +275,11 @@ def _ts4t_modify_sim_clone(output: CommonConsoleCommandOutput, sim_info: SimInfo
 
 # noinspection PyUnusedLocal
 @CommonEventRegistry.handle_events(ModInfo.get_identity())
-def _common_clean_sim_clones_on_zone_load(event_data: TS4TZoneLateLoadEvent):
+def _common_clean_sim_clones_on_zone_load(event_data: S4CLZoneLateLoadEvent):
     CommonEditSimCloneInCASService()._clean_up_sim_clones()
 
 
 @CommonEventRegistry.handle_events(ModInfo.get_identity())
-def _common_sim_clone_on_outfit_change(event_data: TS4TSimSetCurrentOutfitEvent) -> bool:
+def _common_sim_clone_on_outfit_change(event_data: S4CLSimSetCurrentOutfitEvent) -> bool:
     CommonEditSimCloneInCASService()._on_sim_clone_outfit_changed(event_data.sim_info, event_data.new_outfit_category_and_index)
     return True

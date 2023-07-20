@@ -15,7 +15,7 @@ class CommonIconId(CommonInt):
     """Identifiers for vanilla and Sims 4 Community Library icons.
 
     """
-    # TS4T
+    # S4CL
     INVALID: 'CommonIconId' = 0
     TS4T_ARROW_RIGHT_ICON: 'CommonIconId' = 3589997896388655139
     TS4T_ARROW_LEFT_ICON: 'CommonIconId' = 13667220474349513917

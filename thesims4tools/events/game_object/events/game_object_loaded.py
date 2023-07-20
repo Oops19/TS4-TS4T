@@ -12,8 +12,8 @@ from objects.game_object import GameObject
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TGameObjectLoadedEvent(CommonEvent):
-    """TS4TGameObjectLoadedEvent(game_object)
+class S4CLGameObjectLoadedEvent(CommonEvent):
+    """S4CLGameObjectLoadedEvent(game_object)
 
     An event that occurs after a Game Object has been loaded.
 
@@ -34,7 +34,7 @@ class TS4TGameObjectLoadedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: TS4TGameObjectLoadedEvent):
+            def handle_event(event_data: S4CLGameObjectLoadedEvent):
                 pass
 
     :param game_object: The Game Object that was loaded.

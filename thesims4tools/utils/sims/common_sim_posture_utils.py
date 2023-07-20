@@ -16,11 +16,11 @@ from sims.sim_info import SimInfo
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.common_posture_id import CommonPostureId
 from thesims4tools.enums.enumtypes.common_int import CommonInt
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class CommonSimPostureUtils(_HasTS4TClassLog):
+class CommonSimPostureUtils(_HasS4CLClassLog):
     """Utilities for managing the posture of Sims."""
 
     # noinspection PyMissingOrEmptyDocstring
@@ -100,7 +100,7 @@ class CommonSimPostureUtils(_HasTS4TClassLog):
             cls.get_log().format_with_message('Success, Sim is a toddler or baby human and thus may be picked up.', sim=sim_info)
             return CommonTestResult.TRUE
         from thesims4tools.enums.strings_enum import CommonStringId
-        return CommonTestResult(False, reason=f'{sim_info} cannot be picked up.', tooltip_text=CommonStringId.TS4T_SIM_CANNOT_BE_PICKED_UP, tooltip_tokens=(sim_info,))
+        return CommonTestResult(False, reason=f'{sim_info} cannot be picked up.', tooltip_text=CommonStringId.S4CL_SIM_CANNOT_BE_PICKED_UP, tooltip_tokens=(sim_info,))
 
     @classmethod
     def is_on_container_supporting_posture(cls, sim_info: SimInfo, posture: Union[int, CommonPostureId, Posture, CommonInt]) -> CommonTestResult:

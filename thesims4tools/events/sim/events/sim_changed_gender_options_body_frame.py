@@ -12,8 +12,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TSimChangedGenderOptionsBodyFrameEvent(CommonEvent):
-    """TS4TSimChangedGenderOptionsBodyFrameEvent(sim_info)
+class S4CLSimChangedGenderOptionsBodyFrameEvent(CommonEvent):
+    """S4CLSimChangedGenderOptionsBodyFrameEvent(sim_info)
 
     An event that occurs when a Sim has changed their body frame. i.e. Masculine to Feminine or vice verse
 
@@ -34,7 +34,7 @@ class TS4TSimChangedGenderOptionsBodyFrameEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TSimChangedGenderOptionsBodyFrameEvent):
+            def handle_event(event_data: S4CLSimChangedGenderOptionsBodyFrameEvent):
                 pass
 
     :param sim_info: The Sim that changed.

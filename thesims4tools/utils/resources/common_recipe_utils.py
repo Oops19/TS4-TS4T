@@ -12,10 +12,10 @@ from crafting.recipe import Recipe
 from typing import Callable, Iterator, Union, Tuple, List
 
 from sims4.resources import Types
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 
 
-class CommonRecipeUtils(_HasTS4TClassLog):
+class CommonRecipeUtils(_HasS4CLClassLog):
     """Utilities for manipulating Recipes in various ways.
 
     """

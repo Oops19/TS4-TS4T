@@ -22,7 +22,7 @@ from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.buffs_enum import CommonBuffId
 from thesims4tools.enums.strings_enum import CommonStringId
 from thesims4tools.enums.types.component_types import CommonComponentType
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.notifications.common_basic_notification import CommonBasicNotification
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
@@ -33,7 +33,7 @@ from thesims4tools.utils.localization.common_localization_utils import CommonLoc
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class CommonBuffUtils(_HasTS4TClassLog):
+class CommonBuffUtils(_HasS4CLClassLog):
     """Utilities for manipulating Buffs on Sims.
 
     """

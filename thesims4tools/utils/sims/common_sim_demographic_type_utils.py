@@ -11,7 +11,7 @@ All modifications by and copyright Oops19.
 from typing import Tuple, TYPE_CHECKING, Dict, List
 
 from sims.sim_info import SimInfo
-from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
 from thesims4tools.utils.math.common_bitwise_utils import CommonBitwiseUtils
 from thesims4tools.utils.sims.common_sim_occult_type_utils import CommonSimOccultTypeUtils
 from thesims4tools.utils.sims.common_sim_type_utils import CommonSimTypeUtils
@@ -25,7 +25,7 @@ if TYPE_CHECKING:
     from thesims4tools.enums.common_sim_demographic_types import CommonSimDemographicType
 
 
-class CommonSimDemographicTypeUtils(_HasTS4TClassLog):
+class CommonSimDemographicTypeUtils(_HasS4CLClassLog):
     """ Utilities for Sim Demographic types. """
 
     # noinspection PyMissingOrEmptyDocstring

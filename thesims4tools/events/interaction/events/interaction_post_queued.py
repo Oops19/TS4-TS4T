@@ -14,8 +14,8 @@ from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class TS4TInteractionPostQueuedEvent(CommonEvent):
-    """TS4TInteractionPostQueuedEvent(interaction, interaction_queue, queue_result)
+class S4CLInteractionPostQueuedEvent(CommonEvent):
+    """S4CLInteractionPostQueuedEvent(interaction, interaction_queue, queue_result)
 
     An event that occurs after a Sim adds an interaction to their interaction queue.
 
@@ -38,7 +38,7 @@ class TS4TInteractionPostQueuedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: TS4TInteractionPostQueuedEvent) -> bool:
+            def handle_event(event_data: S4CLInteractionPostQueuedEvent) -> bool:
                 # Return True here to signify the event listener ran successfully. Return False or None here to signify the event listener failed to run.
                 return True
 
