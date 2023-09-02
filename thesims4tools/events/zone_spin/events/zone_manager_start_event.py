@@ -14,8 +14,8 @@ from zone import Zone
 from zone_manager import ZoneManager
 
 
-class S4CLZoneManagerStartEvent(CommonEvent):
-    """S4CLZoneManagerStartEvent(zone_manager)
+class TS4TZoneManagerStartEvent(CommonEvent):
+    """TS4TZoneManagerStartEvent(zone_manager)
 
     An event that occurs after the Zone Manager is started.
 
@@ -36,7 +36,7 @@ class S4CLZoneManagerStartEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLZoneManagerStartEvent):
+            def handle_event(event_data: TS4TZoneManagerStartEvent):
                 pass
 
     :param zone_manager: The Zone Manager.

@@ -161,18 +161,18 @@ class CommonOccultType(CommonInt):
         :rtype: Union[int, str, CommonStringId, LocalizedString]
         """
         mapping: Dict[CommonOccultType, CommonStringId] = {
-            CommonOccultType.NONE: CommonStringId.S4CL_NONE,
-            CommonOccultType.ALIEN: CommonStringId.S4CL_ALIEN,
-            CommonOccultType.MERMAID: CommonStringId.S4CL_MERMAID,
-            CommonOccultType.ROBOT: CommonStringId.S4CL_ROBOT,
-            CommonOccultType.SCARECROW: CommonStringId.S4CL_SCARECROW,
-            CommonOccultType.SKELETON: CommonStringId.S4CL_SKELETON,
-            CommonOccultType.VAMPIRE: CommonStringId.S4CL_VAMPIRE,
-            CommonOccultType.WITCH: CommonStringId.S4CL_WITCH,
-            CommonOccultType.PLANT_SIM: CommonStringId.S4CL_PLANT_SIM,
-            CommonOccultType.GHOST: CommonStringId.S4CL_GHOST,
-            CommonOccultType.WEREWOLF: CommonStringId.S4CL_WEREWOLF,
-            CommonOccultType.NON_OCCULT: CommonStringId.S4CL_NON_OCCULT,
+            CommonOccultType.NONE: CommonStringId.TS4T_NONE,
+            CommonOccultType.ALIEN: CommonStringId.TS4T_ALIEN,
+            CommonOccultType.MERMAID: CommonStringId.TS4T_MERMAID,
+            CommonOccultType.ROBOT: CommonStringId.TS4T_ROBOT,
+            CommonOccultType.SCARECROW: CommonStringId.TS4T_SCARECROW,
+            CommonOccultType.SKELETON: CommonStringId.TS4T_SKELETON,
+            CommonOccultType.VAMPIRE: CommonStringId.TS4T_VAMPIRE,
+            CommonOccultType.WITCH: CommonStringId.TS4T_WITCH,
+            CommonOccultType.PLANT_SIM: CommonStringId.TS4T_PLANT_SIM,
+            CommonOccultType.GHOST: CommonStringId.TS4T_GHOST,
+            CommonOccultType.WEREWOLF: CommonStringId.TS4T_WEREWOLF,
+            CommonOccultType.NON_OCCULT: CommonStringId.TS4T_NON_OCCULT,
         }
 
         return mapping.get(value, value.name if hasattr(value, 'name') else str(value))

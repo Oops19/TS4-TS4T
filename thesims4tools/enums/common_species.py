@@ -25,6 +25,7 @@ class CommonSpecies(CommonInt):
     LARGE_DOG: 'CommonSpecies' = ...
     CAT: 'CommonSpecies' = ...
     FOX: 'CommonSpecies' = ...
+    HORSE: 'CommonSpecies' = ...
 
     @classmethod
     def get_all(cls, exclude_values: Iterator['CommonSpecies'] = None) -> Tuple['CommonSpecies']:
@@ -92,6 +93,8 @@ class CommonSpecies(CommonInt):
             return CommonSpecies.LARGE_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
             return CommonSpecies.CAT
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            return CommonSpecies.HORSE
         return CommonSpecies.INVALID
 
     @staticmethod
@@ -121,6 +124,8 @@ class CommonSpecies(CommonInt):
             mapping[CommonSpecies.CAT] = SpeciesExtended.CAT
         if hasattr(SpeciesExtended, 'FOX'):
             mapping[CommonSpecies.FOX] = SpeciesExtended.FOX
+        if hasattr(SpeciesExtended, 'HORSE'):
+            mapping[CommonSpecies.HORSE] = SpeciesExtended.HORSE
         return mapping.get(value, None)
 
     @staticmethod
@@ -150,6 +155,8 @@ class CommonSpecies(CommonInt):
             mapping[SpeciesExtended.CAT] = CommonSpecies.CAT
         if hasattr(SpeciesExtended, 'FOX'):
             mapping[SpeciesExtended.FOX] = CommonSpecies.FOX
+        if hasattr(SpeciesExtended, 'HORSE'):
+            mapping[SpeciesExtended.HORSE] = CommonSpecies.HORSE
         return mapping.get(value, CommonSpecies.INVALID)
 
     @staticmethod
@@ -169,7 +176,8 @@ class CommonSpecies(CommonInt):
             CommonSpecies.LARGE_DOG: CommonStringId.LARGE_DOG,
             CommonSpecies.SMALL_DOG: CommonStringId.SMALL_DOG,
             CommonSpecies.CAT: CommonStringId.CAT,
-            CommonSpecies.FOX: CommonStringId.FOX
+            CommonSpecies.FOX: CommonStringId.FOX,
+            CommonSpecies.HORSE: CommonStringId.HORSE,
         }
         if isinstance(value, int) and not isinstance(value, CommonSpecies):
             from thesims4tools.utils.common_resource_utils import CommonResourceUtils

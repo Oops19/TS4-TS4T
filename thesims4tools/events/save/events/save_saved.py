@@ -14,8 +14,8 @@ from services.persistence_service import SaveGameData
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSaveSavedEvent(CommonEvent):
-    """S4CLSaveSavedEvent(save_slot_data)
+class TS4TSaveSavedEvent(CommonEvent):
+    """TS4TSaveSavedEvent(save_slot_data)
 
     An event that occurs upon a Save being saved (Before it has been saved).
 
@@ -38,7 +38,7 @@ class S4CLSaveSavedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSaveSavedEvent):
+            def handle_event(event_data: TS4TSaveSavedEvent):
                 pass
 
     :param save_game_data: The data that will be saved.

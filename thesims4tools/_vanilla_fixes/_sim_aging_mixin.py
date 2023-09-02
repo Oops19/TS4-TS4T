@@ -22,7 +22,7 @@ if hasattr(AgingMixin, 'get_age_transition_data'):
             return original(self, age, *_, **__)
         except Exception as ex:
             if 'KeyError: 5' in str(ex):
-                log.format_error_with_message('Failed to get age transition data, a mod that replaces the AGING_MIXIN tuning, needs to be updated! (This exception is not caused by S4CL, but rather caught)', owner=self, age=age, species=self.species if hasattr(self, 'species') else None, argles=_, kwargles=__, exception=ex)
+                log.format_error_with_message('Failed to get age transition data, a mod that replaces the AGING_MIXIN tuning, needs to be updated! (This exception is not caused by TS4T, but rather caught)', owner=self, age=age, species=self.species if hasattr(self, 'species') else None, argles=_, kwargles=__, exception=ex)
             else:
-                log.format_error_with_message('Failed to get age transition data (This exception is not caused by S4CL, but rather caught)', owner=self, age=age, species=self.species if hasattr(self, 'species') else None, argles=_, kwargles=__, exception=ex)
+                log.format_error_with_message('Failed to get age transition data (This exception is not caused by TS4T, but rather caught)', owner=self, age=age, species=self.species if hasattr(self, 'species') else None, argles=_, kwargles=__, exception=ex)
             raise ex

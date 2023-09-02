@@ -13,8 +13,8 @@ from thesims4tools.enums.common_death_types import CommonDeathType
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimDiedEvent(CommonEvent):
-    """S4CLSimDiedEvent(sim_info, death_type, died_off_lot)
+class TS4TSimDiedEvent(CommonEvent):
+    """TS4TSimDiedEvent(sim_info, death_type, died_off_lot)
 
     An event that occurs when a Sim has died.
 
@@ -35,7 +35,7 @@ class S4CLSimDiedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSimDiedEvent):
+            def handle_event(event_data: TS4TSimDiedEvent):
                 pass
 
     :param sim_info: The Sim that died.

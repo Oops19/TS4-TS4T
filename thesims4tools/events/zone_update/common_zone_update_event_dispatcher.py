@@ -10,7 +10,7 @@ All modifications by and copyright Oops19.
 
 import math
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.zone_update.events.zone_update_event import S4CLZoneUpdateEvent
+from thesims4tools.events.zone_update.events.zone_update_event import TS4TZoneUpdateEvent
 from thesims4tools.logging.has_log import HasLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
@@ -72,7 +72,7 @@ class CommonZoneUpdateEventDispatcherService(CommonService, HasLog):
                     return False
                 self._update_ticks(diff_ticks)
             self._last_absolute_ticks = absolute_ticks
-            return CommonEventRegistry.get().dispatch(S4CLZoneUpdateEvent(zone, is_paused, self.ticks_since_last_zone_update))
+            return CommonEventRegistry.get().dispatch(TS4TZoneUpdateEvent(zone, is_paused, self.ticks_since_last_zone_update))
         except Exception as ex:
             self.log.error('Failed to run internal method \'{}\' at \'{}\'.'.format(CommonZoneUpdateEventDispatcherService._on_zone_update.__name__, Zone.update.__name__), exception=ex)
 

@@ -188,5 +188,5 @@ class CommonLogUtils:
 
     @staticmethod
     def _file_is_too_big(file_path: str) -> bool:
-        from thesims4tools.ts4t_configuration import S4CLConfiguration
-        return os.path.getsize(file_path) > S4CLConfiguration().max_output_file_size_in_bytes
+        from thesims4tools.ts4t_configuration import TS4TConfiguration
+        return os.path.getsize(file_path) > TS4TConfiguration().max_output_file_size_in_bytes

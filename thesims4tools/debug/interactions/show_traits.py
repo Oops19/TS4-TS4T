@@ -25,8 +25,8 @@ from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 from thesims4tools.utils.sims.common_trait_utils import CommonTraitUtils
 
 
-class S4CLDebugShowTraitsInteraction(CommonImmediateSuperInteraction):
-    """S4CLDebugShowTraitsInteraction(*_, **__)
+class TS4TDebugShowTraitsInteraction(CommonImmediateSuperInteraction):
+    """TS4TDebugShowTraitsInteraction(*_, **__)
 
     Show the current Traits of a Sim.
     """

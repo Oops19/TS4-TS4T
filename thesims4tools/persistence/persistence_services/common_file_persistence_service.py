@@ -111,8 +111,8 @@ class CommonFilePersistenceService(CommonPersistenceService):
             return os.path.join(folder_path, self._custom_file_name)
         if self._per_save:
             save_slot_guid = CommonSaveUtils.get_save_slot_guid()
-            from thesims4tools.ts4t_configuration import S4CLConfiguration
-            if self._per_save_slot or S4CLConfiguration().persist_mod_data_per_save_slot:
+            from thesims4tools.ts4t_configuration import TS4TConfiguration
+            if self._per_save_slot or TS4TConfiguration().persist_mod_data_per_save_slot:
                 save_slot_id = CommonSaveUtils.get_save_slot_id()
                 if save_slot_id == 0:
                     return ''

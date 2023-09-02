@@ -25,8 +25,8 @@ from thesims4tools.utils.sims.common_sim_name_utils import CommonSimNameUtils
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class S4CLDebugShowActiveBuffsInteraction(CommonImmediateSuperInteraction):
-    """S4CLDebugShowActiveBuffsInteraction(*_, **__)
+class TS4TDebugShowActiveBuffsInteraction(CommonImmediateSuperInteraction):
+    """TS4TDebugShowActiveBuffsInteraction(*_, **__)
 
     Show the currently active Buffs of a Sim.
     """

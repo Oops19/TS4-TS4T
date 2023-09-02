@@ -24,9 +24,9 @@ log = CommonLogRegistry().register_log(ModInfo.get_identity(), 'ts4t_extra_cheat
 
 @CommonInjectionUtils.inject_safely_into(ModInfo.get_identity(), InteractionContext, InteractionContext.__init__.__name__)
 def _common_ensure_shift_held_is_true_when_it_should_be(original, self: InteractionContext, *_, **__):
-    from thesims4tools.ts4t_configuration import S4CLConfiguration
+    from thesims4tools.ts4t_configuration import TS4TConfiguration
     cheat_service = services.get_cheat_service()
-    if cheat_service.cheats_enabled and S4CLConfiguration().enable_extra_shift_click_menus and ('shift_held' not in __ or not __['shift_held']):
+    if cheat_service.cheats_enabled and TS4TConfiguration().enable_extra_shift_click_menus and ('shift_held' not in __ or not __['shift_held']):
         log.format_with_message('Enabling shift click because SHIFT was held down.')
         __['shift_held'] = CommonKeyboardUtils.is_holding_key_down(CommonKey.SHIFT)
     return original(self, *_, **__)
@@ -40,8 +40,8 @@ def _common_ensure_proper_interactions_appear_in_relationship_panel(original, se
     elif len(args) == 2:
         context: InteractionContext = args[1]
     cheat_service = services.get_cheat_service()
-    from thesims4tools.ts4t_configuration import S4CLConfiguration
-    if not S4CLConfiguration().enable_extra_shift_click_menus or not cheat_service.cheats_enabled:
+    from thesims4tools.ts4t_configuration import TS4TConfiguration
+    if not TS4TConfiguration().enable_extra_shift_click_menus or not cheat_service.cheats_enabled:
         yield from original(self, *args, **kwargs)
     elif context is not None:
         original_result = original(self, *args, **kwargs)
@@ -51,7 +51,7 @@ def _common_ensure_proper_interactions_appear_in_relationship_panel(original, se
                 affordance = aop.affordance
                 affordance_id = CommonInteractionUtils.get_interaction_id(affordance)
                 if affordance_id == CommonInteractionId.TOGGLE_PHONE_SILENCE:
-                    # We do this to account for a bug in dumb mod that is literally there solely to annoy those who use S4CL.
+                    # We do this to account for a bug in dumb mod that is literally there solely to annoy those who use TS4T.
                     yield aop
                     continue
                 if context.shift_held:
@@ -78,8 +78,8 @@ def _common_ensure_proper_interactions_appear_in_phone_panel(original, self: Sim
     elif len(args) == 2:
         context: InteractionContext = args[1]
     cheat_service = services.get_cheat_service()
-    from thesims4tools.ts4t_configuration import S4CLConfiguration
-    if not S4CLConfiguration().enable_extra_shift_click_menus or not cheat_service.cheats_enabled:
+    from thesims4tools.ts4t_configuration import TS4TConfiguration
+    if not TS4TConfiguration().enable_extra_shift_click_menus or not cheat_service.cheats_enabled:
         yield from original(self, *args, **kwargs)
     elif context is not None:
         original_result = original(self, *args, **kwargs)
@@ -89,7 +89,7 @@ def _common_ensure_proper_interactions_appear_in_phone_panel(original, self: Sim
                 affordance = aop.affordance
                 affordance_id = CommonInteractionUtils.get_interaction_id(affordance)
                 if affordance_id == CommonInteractionId.TOGGLE_PHONE_SILENCE:
-                    # We do this to account for a bug in dumb mod that is literally there solely to annoy those who use S4CL.
+                    # We do this to account for a bug in dumb mod that is literally there solely to annoy those who use TS4T.
                     yield aop
                     continue
                 if context.shift_held:

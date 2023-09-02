@@ -15,8 +15,8 @@ from traits.trait_tracker import TraitTracker
 from traits.traits import Trait
 
 
-class S4CLSimTraitRemovedEvent(CommonEvent):
-    """S4CLSimTraitRemovedEvent(sim_info, trait, trait_tracker)
+class TS4TSimTraitRemovedEvent(CommonEvent):
+    """TS4TSimTraitRemovedEvent(sim_info, trait, trait_tracker)
 
     An event that occurs when a Trait is removed from a Sim.
 
@@ -37,7 +37,7 @@ class S4CLSimTraitRemovedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: S4CLSimTraitRemovedEvent):
+            def handle_event(event_data: TS4TSimTraitRemovedEvent):
                 pass
 
     :param sim_info: The Sim that changed.

@@ -14,8 +14,8 @@ from thesims4tools.utils.resources.common_skill_utils import CommonSkillUtils
 from statistics.skill import Skill
 
 
-class S4CLSimSkillLeveledUpEvent(CommonEvent):
-    """S4CLSimSkillLeveledUpEvent(sim_info, skill, old_skill_level, new_skill_level)
+class TS4TSimSkillLeveledUpEvent(CommonEvent):
+    """TS4TSimSkillLeveledUpEvent(sim_info, skill, old_skill_level, new_skill_level)
 
     An event that occurs when a Sim levels up in a Skill.
 
@@ -36,7 +36,7 @@ class S4CLSimSkillLeveledUpEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: S4CLSimSkillLeveledUpEvent):
+            def handle_event(event_data: TS4TSimSkillLeveledUpEvent):
                 pass
 
     :param sim_info: The Sim that changed.

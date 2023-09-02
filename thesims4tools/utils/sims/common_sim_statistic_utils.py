@@ -19,7 +19,7 @@ from thesims4tools.classes.testing.common_execution_result import CommonExecutio
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.statistics_enum import CommonStatisticId
 from thesims4tools.enums.types.component_types import CommonComponentType
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.notifications.common_basic_notification import CommonBasicNotification
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
@@ -33,7 +33,7 @@ from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 from statistics.base_statistic import BaseStatistic
 
 
-class CommonSimStatisticUtils(_HasS4CLClassLog):
+class CommonSimStatisticUtils(_HasTS4TClassLog):
     """Utilities for manipulating the Statistics of Sims.
 
     """

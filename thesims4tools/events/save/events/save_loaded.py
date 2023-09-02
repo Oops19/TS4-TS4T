@@ -11,8 +11,8 @@ All modifications by and copyright Oops19.
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSaveLoadedEvent(CommonEvent):
-    """S4CLSaveLoadedEvent(save_slot_data)
+class TS4TSaveLoadedEvent(CommonEvent):
+    """TS4TSaveLoadedEvent(save_slot_data)
 
     An event that occurs upon a Save being loaded (After it has been loaded).
 
@@ -33,7 +33,7 @@ class S4CLSaveLoadedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSaveLoadedEvent):
+            def handle_event(event_data: TS4TSaveLoadedEvent):
                 pass
 
     """

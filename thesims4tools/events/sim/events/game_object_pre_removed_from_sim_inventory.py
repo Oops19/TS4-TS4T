@@ -14,8 +14,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from thesims4tools.utils.objects.common_object_utils import CommonObjectUtils
 
 
-class S4CLGameObjectPreRemovedFromSimInventoryEvent(CommonEvent):
-    """S4CLGameObjectPreRemovedFromSimInventoryEvent(sim_info, removed_game_object)
+class TS4TGameObjectPreRemovedFromSimInventoryEvent(CommonEvent):
+    """TS4TGameObjectPreRemovedFromSimInventoryEvent(sim_info, removed_game_object)
 
     An event that occurs before a Game Object is removed from the inventory of a Sim.
 
@@ -36,7 +36,7 @@ class S4CLGameObjectPreRemovedFromSimInventoryEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: S4CLGameObjectPreRemovedFromSimInventoryEvent):
+            def handle_event(event_data: TS4TGameObjectPreRemovedFromSimInventoryEvent):
                 pass
 
     :param sim_info: The Sim that changed.

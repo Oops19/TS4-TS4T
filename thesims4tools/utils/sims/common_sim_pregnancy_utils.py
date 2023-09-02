@@ -183,7 +183,7 @@ class CommonSimPregnancyUtils(HasClassLog):
             CommonObjectStateUtils.set_object_state(sim, CommonObjectStateValueId.PREGNANT_IN_LABOR)
         buff_id = cls.get_in_labor_buff(sim_info)
         if buff_id != -1:
-            result = CommonBuffUtils.add_buff(sim_info, buff_id, buff_reason=CommonStringId.S4CL_BUFF_REASON_FROM_DEBUG)
+            result = CommonBuffUtils.add_buff(sim_info, buff_id, buff_reason=CommonStringId.TS4T_BUFF_REASON_FROM_DEBUG)
             return result.result
         return True
 
@@ -230,10 +230,11 @@ class CommonSimPregnancyUtils(HasClassLog):
         if can_not_be_impregnated_trait is None:
             return CommonTestResult(False, reason=f'No Cannot Be Impregnated trait was found for Sim {sim_info}.')
         if CommonSpeciesUtils.is_animal(sim_info):
-            if CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_NOT_REPRODUCE):
-                return CommonTestResult(False, reason=f'Animal Sim {sim_info} had the Cannot Reproduce trait.')
-            if not CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_REPRODUCE):
-                return CommonTestResult(False, reason=f'Animal Sim {sim_info} did not have the Can Reproduce trait.')
+            if not CommonSpeciesUtils.is_horse(sim_info):
+                if CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_NOT_REPRODUCE):
+                    return CommonTestResult(False, reason=f'Animal Sim {sim_info} had the Cannot Reproduce trait.')
+                if not CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_REPRODUCE):
+                    return CommonTestResult(False, reason=f'Animal Sim {sim_info} did not have the Can Reproduce trait.')
 
         if CommonTraitUtils.has_trait(sim_info, can_not_be_impregnated_trait):
             return CommonTestResult(False, reason=f'Sim had the Cannot Be Impregnated trait.')
@@ -261,10 +262,11 @@ class CommonSimPregnancyUtils(HasClassLog):
         if can_not_impregnate_trait is None:
             return CommonTestResult(False, reason=f'No Cannot Impregnate trait was found for Sim {sim_info}.')
         if CommonSpeciesUtils.is_animal(sim_info):
-            if CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_NOT_REPRODUCE):
-                return CommonTestResult(False, reason=f'Sim had the Cannot Reproduce trait.')
-            if not CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_REPRODUCE):
-                return CommonTestResult(False, reason=f'Sim did not have the Can Reproduce trait.')
+            if not CommonSpeciesUtils.is_horse(sim_info):
+                if CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_NOT_REPRODUCE):
+                    return CommonTestResult(False, reason=f'Sim had the Cannot Reproduce trait.')
+                if not CommonTraitUtils.has_trait(sim_info, CommonTraitId.PREGNANCY_OPTIONS_PET_CAN_REPRODUCE):
+                    return CommonTestResult(False, reason=f'Sim did not have the Can Reproduce trait.')
 
         if CommonTraitUtils.has_trait(sim_info, can_not_impregnate_trait):
             return CommonTestResult(False, reason=f'Sim had the Cannot Impregnate trait.')
@@ -386,6 +388,11 @@ class CommonSimPregnancyUtils(HasClassLog):
             if is_female:
                 log.debug('\'{}\' is Female.'.format(sim_name))
                 return CommonBuffId.PREGNANCY_IN_LABOR_PET_CAT
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            log.debug('\'{}\' is a Horse.'.format(sim_name))
+            if is_female:
+                log.debug('\'{}\' is Female.'.format(sim_name))
+                return CommonBuffId.PREGNANCY_IN_LABOR_PET_HORSE
         log.debug('No appropriate Buff located to induce labor in \'{}\'.'.format(sim_name))
         return -1
 
@@ -429,6 +436,8 @@ class CommonSimPregnancyUtils(HasClassLog):
             return CommonStatisticId.PREGNANCY_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
             return CommonStatisticId.PREGNANCY
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            return CommonStatisticId.PREGNANCY_HORSE
         return None
 
     @classmethod
@@ -445,13 +454,15 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_LARGE_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_SMALL_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_CAT
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_FOX
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_FOX
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_IMPREGNATE_HORSE
         return None
 
     @classmethod
@@ -468,13 +479,15 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_LARGE_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_SMALL_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_CAT
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_FOX
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_FOX
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_IMPREGNATE_HORSE
         return None
 
     @classmethod
@@ -491,13 +504,15 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_LARGE_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_SMALL_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_CAT
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_FOX
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_FOX
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_BE_IMPREGNATED_HORSE
         return None
 
     @classmethod
@@ -514,13 +529,15 @@ class CommonSimPregnancyUtils(HasClassLog):
         if CommonSpeciesUtils.is_human(sim_info):
             return CommonTraitId.GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED
         elif CommonSpeciesUtils.is_large_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_LARGE_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_LARGE_DOG
         elif CommonSpeciesUtils.is_small_dog(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_SMALL_DOG
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_SMALL_DOG
         elif CommonSpeciesUtils.is_cat(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_CAT
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_CAT
         elif CommonSpeciesUtils.is_fox(sim_info):
-            return CommonTraitId.S4CL_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_FOX
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_FOX
+        elif CommonSpeciesUtils.is_horse(sim_info):
+            return CommonTraitId.TS4T_GENDER_OPTIONS_PREGNANCY_CAN_NOT_BE_IMPREGNATED_HORSE
         return None
 
 

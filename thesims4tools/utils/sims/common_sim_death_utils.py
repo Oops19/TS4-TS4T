@@ -22,7 +22,7 @@ from thesims4tools.classes.testing.common_execution_result import CommonExecutio
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.common_death_types import CommonDeathType
 from thesims4tools.enums.common_region_id import CommonRegionId
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
     CommonConsoleCommandArgument
@@ -44,7 +44,7 @@ from thesims4tools.utils.sims.common_species_utils import CommonSpeciesUtils
 from thesims4tools.utils.time.common_alarm_utils import CommonAlarmUtils
 
 
-class CommonSimDeathUtils(_HasS4CLClassLog):
+class CommonSimDeathUtils(_HasTS4TClassLog):
     """Utilities for manipulating the body of Sims.
 
     """
@@ -271,6 +271,8 @@ class CommonSimDeathUtils(_HasS4CLClassLog):
                 return 159835  # death_OldAge_Cat
             elif CommonSpeciesUtils.is_dog(sim_info):
                 return 159868  # death_OldAge_Dog
+            elif CommonSpeciesUtils.is_horse(sim_info):
+                return 321074  # death_OldAge_Horse
             else:
                 return 265869  # death_OldAge_Fox
 

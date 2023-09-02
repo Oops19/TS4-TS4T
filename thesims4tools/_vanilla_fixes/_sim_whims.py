@@ -25,7 +25,7 @@ def _common_catch_errors_related_to_whims_from_outdated_mods(original, self, whi
         return original(self, whim_type, whimset, *_, **__)
     except Exception as ex:
         log.format_error_with_message(
-            'An error occurred when attempting to generate Whims for Sims. (This exception is not caused by S4CL, but rather caught)',
+            'An error occurred when attempting to generate Whims for Sims. (This exception is not caused by TS4T, but rather caught)',
             whim_type=whim_type,
             whimset_name=whimset,
             whimset_guid=getattr(whimset, 'guid64', None),

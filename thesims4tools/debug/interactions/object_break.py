@@ -20,8 +20,8 @@ from thesims4tools.utils.common_type_utils import CommonTypeUtils
 from thesims4tools.utils.objects.common_object_state_utils import CommonObjectStateUtils
 
 
-class S4CLDebugObjectBreakInteraction(CommonImmediateSuperInteraction):
-    """S4CLDebugObjectBreakInteraction(*_, **__)
+class TS4TDebugObjectBreakInteraction(CommonImmediateSuperInteraction):
+    """TS4TDebugObjectBreakInteraction(*_, **__)
 
     Set the target Object to a broken state.
     """

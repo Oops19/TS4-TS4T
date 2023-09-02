@@ -24,7 +24,7 @@ from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 from thesims4tools.utils.common_type_utils import CommonTypeUtils
 
 
-class S4CLDebugInduceLaborInteraction(CommonImmediateSuperInteraction):
+class TS4TDebugInduceLaborInteraction(CommonImmediateSuperInteraction):
     """ Handle the interaction to Induce Labor. """
 
     # noinspection PyMissingOrEmptyDocstring
@@ -53,7 +53,7 @@ class S4CLDebugInduceLaborInteraction(CommonImmediateSuperInteraction):
         cls.get_log().format_with_message('Checking if Sim is pregnant.', target_sim=target_sim_info)
         if not CommonSimPregnancyUtils.is_pregnant(target_sim_info):
             cls.get_log().format_with_message('Sim is not pregnant.', sim=target_sim_info)
-            return cls.create_test_result(False, reason='\'{}\' is not pregnant.'.format(CommonSimNameUtils.get_full_name(target_sim_info)), tooltip=CommonLocalizationUtils.create_localized_tooltip(CommonStringId.S4CL_SIM_IS_NOT_PREGNANT, tooltip_tokens=(target_sim_info, )))
+            return cls.create_test_result(False, reason='\'{}\' is not pregnant.'.format(CommonSimNameUtils.get_full_name(target_sim_info)), tooltip=CommonLocalizationUtils.create_localized_tooltip(CommonStringId.TS4T_SIM_IS_NOT_PREGNANT, tooltip_tokens=(target_sim_info, )))
         cls.get_log().debug('Success.')
         return CommonTestResult.TRUE
 

@@ -26,12 +26,12 @@ def _common_broadcaster_apply(original, self: Broadcaster, *_, **__) -> None:
         if self.interaction is not None:
             interaction = self.interaction
             # noinspection PyTypeChecker
-            CommonExceptionHandler.log_exception(None, 'Error occurred while running apply_broadcaster_effect for broadcaster {} for interaction {} with short name {} and display name {} (This exception is not caused by S4CL, but rather caught)'.format(pformat(self), pformat(interaction), CommonInteractionUtils.get_interaction_short_name(interaction), CommonInteractionUtils.get_interaction_display_name(interaction)), exception=ex)
+            CommonExceptionHandler.log_exception(None, 'Error occurred while running apply_broadcaster_effect for broadcaster {} for interaction {} with short name {} and display name {} (This exception is not caused by TS4T, but rather caught)'.format(pformat(self), pformat(interaction), CommonInteractionUtils.get_interaction_short_name(interaction), CommonInteractionUtils.get_interaction_display_name(interaction)), exception=ex)
         elif self.broadcasting_object is not None:
             broadcasting_object = self.broadcasting_object
             # noinspection PyTypeChecker
-            CommonExceptionHandler.log_exception(None, 'Error occurred while running apply_broadcaster_effect for broadcaster {} from object {} (This exception is not caused by S4CL, but rather caught)'.format(pformat(self), pformat(broadcasting_object)), exception=ex)
+            CommonExceptionHandler.log_exception(None, 'Error occurred while running apply_broadcaster_effect for broadcaster {} from object {} (This exception is not caused by TS4T, but rather caught)'.format(pformat(self), pformat(broadcasting_object)), exception=ex)
         else:
             # noinspection PyTypeChecker
-            CommonExceptionHandler.log_exception(None, 'Error occurred while running apply_broadcaster_effect for broadcaster {} (This exception is not caused by S4CL, but rather caught)'.format(pformat(self)), exception=ex)
+            CommonExceptionHandler.log_exception(None, 'Error occurred while running apply_broadcaster_effect for broadcaster {} (This exception is not caused by TS4T, but rather caught)'.format(pformat(self)), exception=ex)
     return None

@@ -15,8 +15,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimSetCurrentOutfitEvent(CommonEvent):
-    """S4CLSimSetCurrentOutfitEvent(sim_info, old_outfit_category_and_index, new_outfit_category_and_index)
+class TS4TSimSetCurrentOutfitEvent(CommonEvent):
+    """TS4TSimSetCurrentOutfitEvent(sim_info, old_outfit_category_and_index, new_outfit_category_and_index)
 
     An event that occurs when the current outfit of a Sim is being set. (Before it is actually set)
 
@@ -37,7 +37,7 @@ class S4CLSimSetCurrentOutfitEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSimSetCurrentOutfitEvent):
+            def handle_event(event_data: TS4TSimSetCurrentOutfitEvent):
                 pass
 
     :param sim_info: The Sim that changed.

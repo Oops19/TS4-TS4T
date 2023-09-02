@@ -13,7 +13,7 @@ from typing import Any
 from sims4.log import Logger
 from thesims4tools.classes.time.common_stop_watch import CommonStopWatch
 from thesims4tools.modinfo import ModInfo
-from thesims4tools.ts4t_configuration import S4CLConfiguration
+from thesims4tools.ts4t_configuration import TS4TConfiguration
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand
 from thesims4tools.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from thesims4tools.services.common_service import CommonService
@@ -24,14 +24,14 @@ from thesims4tools.utils.misc.common_text_utils import CommonTextUtils
 
 class _CommonVanillaLogOverride(CommonService):
     def __init__(self) -> None:
-        self.logs_enabled = S4CLConfiguration().enable_vanilla_logging
+        self.logs_enabled = TS4TConfiguration().enable_vanilla_logging
         self.logs = list()
         self.stop_watches = dict()
         self.last_time = dict()
 
     def get_log(self, log_name: str) -> CommonLog:
         """ Get a log for a log name. """
-        _log = CommonLogRegistry().register_log(f'{log_name}_S4CLVanillaLog', 'log', 'vanilla_logs')
+        _log = CommonLogRegistry().register_log(f'{log_name}_TS4TVanillaLog', 'log', 'vanilla_logs')
         _log.enable()
         self.logs.append(_log)
         return _log
@@ -90,7 +90,7 @@ class _CommonVanillaLogOverride(CommonService):
         message = self._append_time(log_name, message)
         _log = _CommonVanillaLogOverride().get_log(log_name)
         to_log_message = _CommonVanillaLogOverride()._format_message(message, *args, owner=owner, **kwargs)
-        _log.error(to_log_message + ' (This exception is not caused by S4CL, but rather caught)')
+        _log.error(to_log_message + ' (This exception is not caused by TS4T, but rather caught)')
 
     def _exception(self, log_name: str, message: str, *args, exc: Exception = None, owner=None, **kwargs) -> Any:
         if not self.logs_enabled:
@@ -98,7 +98,7 @@ class _CommonVanillaLogOverride(CommonService):
         message = self._append_time(log_name, message)
         _log = _CommonVanillaLogOverride().get_log(log_name)
         to_log_message = _CommonVanillaLogOverride()._format_message(message, *args, owner=owner, **kwargs)
-        _log.error(to_log_message + ' (This exception is not caused by S4CL, but rather caught)', exception=exc, throw=True)
+        _log.error(to_log_message + ' (This exception is not caused by TS4T, but rather caught)', exception=exc, throw=True)
 
     def _append_time(self, log_name: str, message: str) -> str:
         stop_watch = self._get_stop_watch(log_name)

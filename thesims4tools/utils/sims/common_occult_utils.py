@@ -21,7 +21,7 @@ from thesims4tools.enums.buffs_enum import CommonBuffId
 from thesims4tools.enums.common_bucks_types import CommonBucksType
 from thesims4tools.enums.common_occult_type import CommonOccultType
 from thesims4tools.enums.traits_enum import CommonTraitId
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
     CommonConsoleCommandArgument
@@ -41,7 +41,7 @@ except ModuleNotFoundError:
     from traits.traits import TraitType
 
 
-class CommonOccultUtils(_HasS4CLClassLog):
+class CommonOccultUtils(_HasTS4TClassLog):
     """Utilities for manipulating the Occults of Sims.
 
     """

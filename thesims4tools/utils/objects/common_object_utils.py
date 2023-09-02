@@ -15,14 +15,14 @@ from objects.definition import Definition
 from objects.game_object import GameObject
 from objects.object_manager import ObjectManager
 from objects.script_object import ScriptObject
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand
 from thesims4tools.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from thesims4tools.utils.common_function_utils import CommonFunctionUtils
 
 
-class CommonObjectUtils(_HasS4CLClassLog):
+class CommonObjectUtils(_HasTS4TClassLog):
     """Utilities for retrieving Objects in various ways.
 
     """

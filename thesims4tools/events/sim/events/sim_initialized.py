@@ -12,8 +12,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimInitializedEvent(CommonEvent):
-    """S4CLSimInitializedEvent(sim_info)
+class TS4TSimInitializedEvent(CommonEvent):
+    """TS4TSimInitializedEvent(sim_info)
 
     An event that occurs after a Sim has been initialized.
 
@@ -34,7 +34,7 @@ class S4CLSimInitializedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSimInitializedEvent):
+            def handle_event(event_data: TS4TSimInitializedEvent):
                 pass
 
     :param sim_info: The Sim that was initialized.

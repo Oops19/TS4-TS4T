@@ -54,8 +54,8 @@ class CommonFolderPersistenceService(CommonPersistenceService):
         self._allow_duplicates_in_collections = allow_duplicates_in_collections
         from thesims4tools.utils.common_log_utils import CommonLogUtils
         self._data_folder_path = data_folder_path or CommonLogUtils.get_mod_data_location_path()
-        from thesims4tools.ts4t_configuration import S4CLConfiguration
-        self._create_combined_file = create_combined_file or S4CLConfiguration().create_combined_json
+        from thesims4tools.ts4t_configuration import TS4TConfiguration
+        self._create_combined_file = create_combined_file or TS4TConfiguration().create_combined_json
 
     # noinspection PyMissingOrEmptyDocstring
     def load(self, mod_identity: CommonModIdentity, identifier: str=None) -> Dict[str, Any]:

@@ -13,8 +13,8 @@ from thesims4tools.enums.common_death_types import CommonDeathType
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimRevivedEvent(CommonEvent):
-    """S4CLSimRevivedEvent(sim_info, previous_death_type)
+class TS4TSimRevivedEvent(CommonEvent):
+    """TS4TSimRevivedEvent(sim_info, previous_death_type)
 
     An event that occurs when a Sim has been revived after having previously been dead.
 
@@ -35,7 +35,7 @@ class S4CLSimRevivedEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSimRevivedEvent):
+            def handle_event(event_data: TS4TSimRevivedEvent):
                 pass
 
     :param sim_info: The Sim that was revived.

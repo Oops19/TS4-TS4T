@@ -181,6 +181,10 @@ class CommonSimVoiceUtils:
             return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.CHILD_CAT_AMBIGUOUS_1)
         elif CommonSpeciesUtils.is_fox(sim_info) and CommonAgeUtils.is_teen_adult_or_elder(sim_info):
             return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.ADULT_FOX_AMBIGUOUS_1)
+        elif CommonSpeciesUtils.is_horse(sim_info) and CommonAgeUtils.is_teen_adult_or_elder(sim_info):
+            return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.ADULT_HORSE_AMBIGUOUS_1)
+        elif CommonSpeciesUtils.is_horse(sim_info) and CommonAgeUtils.is_child(sim_info):
+            return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.CHILD_HORSE_AMBIGUOUS_1)
         return CommonExecutionResult(False, reason=f'Failed to locate a default male voice actor for Sim {sim_info}')
 
     @staticmethod
@@ -217,6 +221,10 @@ class CommonSimVoiceUtils:
             return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.CHILD_CAT_AMBIGUOUS_1)
         elif CommonSpeciesUtils.is_fox(sim_info) and CommonAgeUtils.is_teen_adult_or_elder(sim_info):
             return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.ADULT_FOX_AMBIGUOUS_1)
+        elif CommonSpeciesUtils.is_horse(sim_info) and CommonAgeUtils.is_teen_adult_or_elder(sim_info):
+            return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.ADULT_HORSE_AMBIGUOUS_1)
+        elif CommonSpeciesUtils.is_horse(sim_info) and CommonAgeUtils.is_child(sim_info):
+            return CommonSimVoiceUtils.set_voice_actor(sim_info, CommonVoiceActorType.CHILD_HORSE_AMBIGUOUS_1)
         return CommonExecutionResult(False, reason=f'Failed to locate a default female voice actor for Sim {sim_info}')
 
     @staticmethod
@@ -301,6 +309,16 @@ class CommonSimVoiceUtils:
             result: Tuple[CommonVoiceActorType] = (
                 CommonVoiceActorType.MUTE,
                 CommonVoiceActorType.ADULT_FOX_AMBIGUOUS_1,
+            )
+        elif CommonSpeciesUtils.is_horse(sim_info) and CommonAgeUtils.is_teen_adult_or_elder(sim_info):
+            result: Tuple[CommonVoiceActorType] = (
+                CommonVoiceActorType.MUTE,
+                CommonVoiceActorType.ADULT_HORSE_AMBIGUOUS_1,
+            )
+        elif CommonSpeciesUtils.is_horse(sim_info) and CommonAgeUtils.is_child(sim_info):
+            result: Tuple[CommonVoiceActorType] = (
+                CommonVoiceActorType.MUTE,
+                CommonVoiceActorType.CHILD_HORSE_AMBIGUOUS_1,
             )
         else:
             result: Tuple[CommonVoiceActorType] = (

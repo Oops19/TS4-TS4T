@@ -14,7 +14,7 @@ from typing import Tuple, Union, Iterator, Dict, List
 from sims4.utils import classproperty
 from thesims4tools.dtos.common_cas_part import CommonCASPart
 from thesims4tools.enums.common_body_slot import CommonBodySlot
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
@@ -54,7 +54,7 @@ if not ON_RTD:
     from sims.sim_info import SimInfo
 
 
-class CommonCASUtils(_HasS4CLClassLog):
+class CommonCASUtils(_HasTS4TClassLog):
     """Utilities for manipulating the CAS parts of Sims.
 
     """

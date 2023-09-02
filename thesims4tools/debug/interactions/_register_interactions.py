@@ -27,13 +27,13 @@ from thesims4tools.utils.objects.common_object_state_utils import CommonObjectSt
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_SCRIPT_OBJECT_LOAD)
-class _S4CLObjectBrokennessDebugInteractionHandler(CommonScriptObjectInteractionHandler):
+class _TS4TObjectBrokennessDebugInteractionHandler(CommonScriptObjectInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_OBJECT_BREAK,
-            CommonInteractionId.S4CL_DEBUG_OBJECT_FIX
+            CommonInteractionId.TS4T_DEBUG_OBJECT_BREAK,
+            CommonInteractionId.TS4T_DEBUG_OBJECT_FIX
         )
         return result
 
@@ -46,13 +46,13 @@ class _S4CLObjectBrokennessDebugInteractionHandler(CommonScriptObjectInteraction
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_SCRIPT_OBJECT_LOAD)
-class _S4CLObjectDirtinessDebugInteractionHandler(CommonScriptObjectInteractionHandler):
+class _TS4TObjectDirtinessDebugInteractionHandler(CommonScriptObjectInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_OBJECT_MAKE_DIRTY,
-            CommonInteractionId.S4CL_DEBUG_OBJECT_MAKE_CLEAN
+            CommonInteractionId.TS4T_DEBUG_OBJECT_MAKE_DIRTY,
+            CommonInteractionId.TS4T_DEBUG_OBJECT_MAKE_CLEAN
         )
         return result
 
@@ -65,14 +65,14 @@ class _S4CLObjectDirtinessDebugInteractionHandler(CommonScriptObjectInteractionH
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_SCRIPT_OBJECT_LOAD)
-class _S4CLDebugEverywhereObjectInteractionHandler(CommonScriptObjectInteractionHandler):
+class _TS4TDebugEverywhereObjectInteractionHandler(CommonScriptObjectInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS,
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_GAME_TAGS,
-            CommonInteractionId.S4CL_DEBUG_CHANGE_OBJECT_STATES,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_GAME_TAGS,
+            CommonInteractionId.TS4T_DEBUG_CHANGE_OBJECT_STATES,
         )
         return result
 
@@ -82,36 +82,36 @@ class _S4CLDebugEverywhereObjectInteractionHandler(CommonScriptObjectInteraction
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_TERRAIN_LOAD)
-class _S4CLDebugEverywhereTerrainInteractionHandler(CommonInteractionHandler):
+class _TS4TDebugEverywhereTerrainInteractionHandler(CommonInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS,
         )
         return result
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ON_OCEAN_LOAD)
-class _S4CLDebugEverywhereOceanInteractionHandler(CommonInteractionHandler):
+class _TS4TDebugEverywhereOceanInteractionHandler(CommonInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS,
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_GAME_TAGS,
-            CommonInteractionId.S4CL_DEBUG_CHANGE_OBJECT_STATES,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_GAME_TAGS,
+            CommonInteractionId.TS4T_DEBUG_CHANGE_OBJECT_STATES,
         )
         return result
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ADD_TO_SIM_RELATIONSHIP_PANEL_INTERACTIONS)
-class _S4CLDebugSimRelationshipPanelInteractionHandler(CommonScriptObjectInteractionHandler):
+class _TS4TDebugSimRelationshipPanelInteractionHandler(CommonScriptObjectInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS,
         )
         return result
 
@@ -121,12 +121,12 @@ class _S4CLDebugSimRelationshipPanelInteractionHandler(CommonScriptObjectInterac
 
 
 @CommonInteractionRegistry.register_interaction_handler(CommonInteractionType.ADD_TO_SIM_PHONE_INTERACTIONS)
-class _S4CLDebugSimPhoneInteractionHandler(CommonScriptObjectInteractionHandler):
+class _TS4TDebugSimPhoneInteractionHandler(CommonScriptObjectInteractionHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interactions_to_add(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS_PHONE,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS_PHONE,
         )
         return result
 
@@ -136,24 +136,24 @@ class _S4CLDebugSimPhoneInteractionHandler(CommonScriptObjectInteractionHandler)
 
 
 @CommonInstanceManagerModificationRegistry.register_modification_handler()
-class _S4CLAddDebugInteractionsToAffordanceWhitelist(CommonAddInteractionsToAffordanceListsModificationHandler):
+class _TS4TAddDebugInteractionsToAffordanceWhitelist(CommonAddInteractionsToAffordanceListsModificationHandler):
     # noinspection PyMissingOrEmptyDocstring
     @property
     def interaction_ids(self) -> Tuple[CommonInt]:
         result: Tuple[CommonInt, ...] = (
-            CommonInteractionId.S4CL_DEBUG_SHOW_RUNNING_AND_QUEUED_INTERACTIONS,
-            CommonInteractionId.S4CL_DEBUG_SHOW_ACTIVE_BUFFS,
-            CommonInteractionId.S4CL_DEBUG_SHOW_TRAITS,
-            CommonInteractionId.S4CL_DEBUG_SHOW_RUNNING_SITUATIONS,
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS,
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_INTERACTIONS_PHONE,
-            CommonInteractionId.S4CL_DEBUG_INDUCE_LABOR,
-            CommonInteractionId.S4CL_DEBUG_OBJECT_BREAK,
-            CommonInteractionId.S4CL_DEBUG_OBJECT_FIX,
-            CommonInteractionId.S4CL_DEBUG_OBJECT_MAKE_DIRTY,
-            CommonInteractionId.S4CL_DEBUG_OBJECT_MAKE_CLEAN,
-            CommonInteractionId.S4CL_DEBUG_LOG_ALL_GAME_TAGS,
-            CommonInteractionId.S4CL_DEBUG_CHANGE_OBJECT_STATES,
+            CommonInteractionId.TS4T_DEBUG_SHOW_RUNNING_AND_QUEUED_INTERACTIONS,
+            CommonInteractionId.TS4T_DEBUG_SHOW_ACTIVE_BUFFS,
+            CommonInteractionId.TS4T_DEBUG_SHOW_TRAITS,
+            CommonInteractionId.TS4T_DEBUG_SHOW_RUNNING_SITUATIONS,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_INTERACTIONS_PHONE,
+            CommonInteractionId.TS4T_DEBUG_INDUCE_LABOR,
+            CommonInteractionId.TS4T_DEBUG_OBJECT_BREAK,
+            CommonInteractionId.TS4T_DEBUG_OBJECT_FIX,
+            CommonInteractionId.TS4T_DEBUG_OBJECT_MAKE_DIRTY,
+            CommonInteractionId.TS4T_DEBUG_OBJECT_MAKE_CLEAN,
+            CommonInteractionId.TS4T_DEBUG_LOG_ALL_GAME_TAGS,
+            CommonInteractionId.TS4T_DEBUG_CHANGE_OBJECT_STATES,
         )
         return result
 

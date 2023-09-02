@@ -27,7 +27,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_ARROW_RIGHT_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_ARROW_RIGHT_ICON)
 
     @staticmethod
     def load_arrow_left_icon() -> Any:
@@ -38,7 +38,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_ARROW_LEFT_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_ARROW_LEFT_ICON)
 
     @staticmethod
     def load_arrow_navigate_into_icon() -> Any:
@@ -49,7 +49,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_ARROW_NAVIGATE_INTO_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_ARROW_NAVIGATE_INTO_ICON)
 
     @staticmethod
     def load_question_mark_icon() -> Any:
@@ -60,7 +60,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_QUESTION_MARK_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_QUESTION_MARK_ICON)
 
     @staticmethod
     def load_checked_square_icon() -> Any:
@@ -71,7 +71,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_CHECKED_SQUARE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_CHECKED_SQUARE_ICON)
 
     @staticmethod
     def load_checked_circle_icon() -> Any:
@@ -82,7 +82,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_CHECKED_CIRCLE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_CHECKED_CIRCLE_ICON)
 
     @staticmethod
     def load_unchecked_square_icon() -> Any:
@@ -93,7 +93,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_UNCHECKED_SQUARE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_UNCHECKED_SQUARE_ICON)
 
     @staticmethod
     def load_x_icon() -> Any:
@@ -104,7 +104,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_X_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_X_ICON)
 
     @staticmethod
     def load_six_sided_dice_icon() -> Any:
@@ -115,7 +115,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_SIX_SIDED_DICE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_SIX_SIDED_DICE_ICON)
 
     @staticmethod
     def load_blank_square_icon() -> Any:
@@ -126,7 +126,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_BLANK_SQUARE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_BLANK_SQUARE_ICON)
 
     @staticmethod
     def load_text_prev_icon() -> Any:
@@ -137,7 +137,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_TEXT_PREV_SQUARE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_TEXT_PREV_SQUARE_ICON)
 
     @staticmethod
     def load_text_next_icon() -> Any:
@@ -148,7 +148,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_TEXT_NEXT_SQUARE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_TEXT_NEXT_SQUARE_ICON)
 
     @staticmethod
     def load_unfilled_circle_icon() -> Any:
@@ -159,7 +159,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_UNFILLED_CIRCLE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_UNFILLED_CIRCLE_ICON)
 
     @staticmethod
     def load_filled_circle_icon() -> Any:
@@ -170,7 +170,7 @@ class CommonIconUtils:
         :return: An identifier for the icon.
         :rtype: Any
         """
-        return CommonIconUtils._load_icon(CommonIconId.TS4T_FILLED_CIRCLE_ICON)
+        return CommonIconUtils._load_icon(CommonIconId.TS4TLS_FILLED_CIRCLE_ICON)
     
     @staticmethod
     def _load_icon(icon_id: Union[int, CommonIconId]) -> Any:

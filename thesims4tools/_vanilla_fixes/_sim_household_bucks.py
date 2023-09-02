@@ -28,6 +28,6 @@ def _common_fix_bucks_when_amount_is_float(original, self, bucks_type, amount: U
         fixed_amount = int(amount)
         return original(self, bucks_type, fixed_amount, *_, **__)
     except Exception as ex:
-        log.format_error_with_message('An error occurred while modifying bucks. (This exception is not caused by S4CL, but rather caught)', owner=self, bucks_type=bucks_type, amount=amount, argles=_, kwargles=__, exception=ex)
+        log.format_error_with_message('An error occurred while modifying bucks. (This exception is not caused by TS4T, but rather caught)', owner=self, bucks_type=bucks_type, amount=amount, argles=_, kwargles=__, exception=ex)
     return False
 

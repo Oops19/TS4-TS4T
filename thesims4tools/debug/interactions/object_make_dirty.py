@@ -20,8 +20,8 @@ from thesims4tools.utils.common_type_utils import CommonTypeUtils
 from thesims4tools.utils.objects.common_object_state_utils import CommonObjectStateUtils
 
 
-class S4CLDebugObjectMakeDirtyInteraction(CommonImmediateSuperInteraction):
-    """S4CLDebugObjectMakeDirtyInteraction(*_, **__)
+class TS4TDebugObjectMakeDirtyInteraction(CommonImmediateSuperInteraction):
+    """TS4TDebugObjectMakeDirtyInteraction(*_, **__)
 
     Set the target Object to a dirty state.
     """

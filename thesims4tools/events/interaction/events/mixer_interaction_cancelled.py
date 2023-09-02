@@ -14,8 +14,8 @@ from interactions.interaction_finisher import FinishingType
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLMixerInteractionCancelledEvent(CommonEvent):
-    """S4CLMixerInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **kwargs)
+class TS4TMixerInteractionCancelledEvent(CommonEvent):
+    """TS4TMixerInteractionCancelledEvent(interaction, finishing_type, cancel_reason_msg, **kwargs)
 
     An event that occurs upon a mixer interaction being cancelled.
 
@@ -38,7 +38,7 @@ class S4CLMixerInteractionCancelledEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name or identity of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: S4CLMixerInteractionCancelledEvent) -> bool:
+            def handle_event(event_data: TS4TMixerInteractionCancelledEvent) -> bool:
                 # Return True from here to signify the event listener ran successfully. Return False or None here to signify the event listener failed to run successfully.
                 return True
 

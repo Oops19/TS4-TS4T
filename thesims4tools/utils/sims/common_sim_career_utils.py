@@ -24,7 +24,7 @@ from sims.sim_info import SimInfo
 from sims4.resources import Types
 from thesims4tools.classes.testing.common_execution_result import CommonExecutionResult
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommand, \
     CommonConsoleCommandArgument
@@ -39,7 +39,7 @@ from thesims4tools.utils.sims.common_trait_utils import CommonTraitUtils
 from singletons import DEFAULT
 
 
-class CommonSimCareerUtils(_HasS4CLClassLog):
+class CommonSimCareerUtils(_HasTS4TClassLog):
     """ Utilities for manipulating the Careers of Sims. """
 
     # noinspection PyMissingOrEmptyDocstring

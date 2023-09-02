@@ -169,7 +169,7 @@ class CommonAttachCASPartsAppearanceModifier(AppearanceModifier.BaseAppearanceMo
     .. code-block:: xml
 
         <?xml version="1.0" encoding="utf-8"?>
-        <I c="CommonExampleApplyBareFeetBuff" i="buff" m="thesims4tools.examples.common_example_apply_bare_feet_buff" n="S4CL_Example_Buff_ApplyBareFeet" s="16461769487103204847">
+        <I c="CommonExampleApplyBareFeetBuff" i="buff" m="thesims4tools.examples.common_example_apply_bare_feet_buff" n="TS4T_Example_Buff_ApplyBareFeet" s="16461769487103204847">
           <V n="appearance_modifier" t="enabled">
             <U n="enabled">
               <L n="appearance_modifiers">
@@ -197,7 +197,7 @@ class CommonAttachCASPartsAppearanceModifier(AppearanceModifier.BaseAppearanceMo
         <?xml version="1.0" encoding="utf-8"?>
         <SimData version="0x00000101" u="0x0000001F">
           <Instances>
-            <I name="S4CL_Example_Buff_ApplyBareFeet" schema="Buff" type="Object">
+            <I name="TS4T_Example_Buff_ApplyBareFeet" schema="Buff" type="Object">
               <T name="audio_sting_on_add">FD04E3BE-001407EC-8AF8B916CF64C646</T>
               <T name="audio_sting_on_remove">FD04E3BE-001407EC-3BF33216A25546EA</T>
               <T name="buff_description">0x00000000</T>
@@ -343,7 +343,7 @@ if not ON_RTD:
     @CommonConsoleCommand(
         ModInfo.get_identity(),
         'ts4t_testing.toggle_example_appearance_modifier_buff',
-        'Apply an example S4CL buff that will make the feet of the Sims with it bare.',
+        'Apply an example TS4T buff that will make the feet of the Sims with it bare.',
         command_arguments=(
             CommonConsoleCommandArgument('sim_info', 'Sim Id or Name', 'The name or instance id of a Sim to attach the buff to.', is_optional=True, default_value='Active Sim'),
         )
@@ -353,10 +353,10 @@ if not ON_RTD:
             return False
         output(f'Toggling bare feet example buff on Sim {sim_info}.')
         from thesims4tools.utils.sims.common_buff_utils import CommonBuffUtils
-        if CommonBuffUtils.has_buff(sim_info, CommonBuffId.S4CL_EXAMPLE_APPLY_BARE_FEET):
+        if CommonBuffUtils.has_buff(sim_info, CommonBuffId.TS4T_EXAMPLE_APPLY_BARE_FEET):
             output(f'Removing bare feet example buff from Sim {sim_info}')
-            CommonBuffUtils.remove_buff(sim_info, CommonBuffId.S4CL_EXAMPLE_APPLY_BARE_FEET)
+            CommonBuffUtils.remove_buff(sim_info, CommonBuffId.TS4T_EXAMPLE_APPLY_BARE_FEET)
         else:
             output(f'Adding bare feet example buff on Sim {sim_info}')
-            CommonBuffUtils.add_buff(sim_info, CommonBuffId.S4CL_EXAMPLE_APPLY_BARE_FEET)
+            CommonBuffUtils.add_buff(sim_info, CommonBuffId.TS4T_EXAMPLE_APPLY_BARE_FEET)
         output(f'Done toggling bare feet example buff on Sim {sim_info}')

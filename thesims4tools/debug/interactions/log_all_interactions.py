@@ -30,7 +30,7 @@ from thesims4tools.utils.resources.common_interaction_utils import CommonInterac
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class S4CLDebugLogAllInteractionsInteraction(CommonImmediateSuperInteraction):
+class TS4TDebugLogAllInteractionsInteraction(CommonImmediateSuperInteraction):
     """ Log All Interactions of an object. """
 
     # noinspection PyMissingOrEmptyDocstring
@@ -130,8 +130,8 @@ class S4CLDebugLogAllInteractionsInteraction(CommonImmediateSuperInteraction):
         self.log.debug('Done Logging Available Interactions.')
         self.log.disable()
         CommonBasicNotification(
-            CommonStringId.S4CL_LOG_ALL_INTERACTIONS,
-            CommonStringId.S4CL_DONE_LOGGING_ALL_INTERACTIONS,
+            CommonStringId.TS4T_LOG_ALL_INTERACTIONS,
+            CommonStringId.TS4T_DONE_LOGGING_ALL_INTERACTIONS,
             description_tokens=(CommonLogUtils.get_message_file_path(self.mod_identity), )
         ).show()
         return CommonExecutionResult.TRUE

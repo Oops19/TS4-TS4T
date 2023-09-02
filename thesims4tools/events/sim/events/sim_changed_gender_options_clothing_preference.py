@@ -12,8 +12,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimChangedGenderOptionsClothingPreferenceEvent(CommonEvent):
-    """S4CLSimChangedGenderOptionsClothingPreferenceEvent(sim_info)
+class TS4TSimChangedGenderOptionsClothingPreferenceEvent(CommonEvent):
+    """TS4TSimChangedGenderOptionsClothingPreferenceEvent(sim_info)
 
     An event that occurs when a Sim has changed their clothing preference. i.e. Menswear to Womenswear or vice verse
 
@@ -34,7 +34,7 @@ class S4CLSimChangedGenderOptionsClothingPreferenceEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSimChangedGenderOptionsClothingPreferenceEvent):
+            def handle_event(event_data: TS4TSimChangedGenderOptionsClothingPreferenceEvent):
                 pass
 
     :param sim_info: The Sim that changed.

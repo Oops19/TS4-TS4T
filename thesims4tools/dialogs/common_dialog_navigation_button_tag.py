@@ -10,5 +10,5 @@ All modifications by and copyright Oops19.
 
 class CommonDialogNavigationButtonTag:
     """ Tags applied to the navigation buttons of a dialog. """
-    PREVIOUS = 'S4CL_PREVIOUS'
-    NEXT = 'S4CL_NEXT'
+    PREVIOUS = 'TS4T_PREVIOUS'
+    NEXT = 'TS4T_NEXT'

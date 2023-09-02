@@ -12,8 +12,8 @@ from sims.sim_info import SimInfo
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimChangedGenderOptionsBreastsEvent(CommonEvent):
-    """S4CLSimChangedGenderOptionsBreastsEvent(sim_info)
+class TS4TSimChangedGenderOptionsBreastsEvent(CommonEvent):
+    """TS4TSimChangedGenderOptionsBreastsEvent(sim_info)
 
     An event that occurs when a Sim has changed whether or not they have breasts.
 
@@ -34,7 +34,7 @@ class S4CLSimChangedGenderOptionsBreastsEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity())
-            def handle_event(event_data: S4CLSimChangedGenderOptionsBreastsEvent):
+            def handle_event(event_data: TS4TSimChangedGenderOptionsBreastsEvent):
                 pass
 
     :param sim_info: The Sim that changed.

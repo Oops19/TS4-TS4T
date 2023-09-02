@@ -19,14 +19,14 @@ from thesims4tools.dialogs.option_dialogs.options.objects.common_dialog_select_o
     CommonDialogSelectOption
 from thesims4tools.enums.common_sim_demographic_types import CommonSimDemographicType
 from thesims4tools.enums.strings_enum import CommonStringId
-from thesims4tools.logging._has_ts4t_log import _HasS4CLLog
+from thesims4tools.logging._has_ts4t_log import _HasTS4TLog
 from thesims4tools.utils.common_collection_utils import CommonCollectionUtils
 from thesims4tools.utils.common_icon_utils import CommonIconUtils
 from thesims4tools.utils.localization.common_localization_utils import CommonLocalizationUtils
 from thesims4tools.utils.localization.common_localized_string_colors import CommonLocalizedStringColor
 
 
-class CommonChooseSimDemographicTypesDialog(_HasS4CLLog):
+class CommonChooseSimDemographicTypesDialog(_HasTS4TLog):
     """ Open a dialog that prompts the player to choose from Sim Demographic Types."""
     def __init__(self, on_close: Callable[[], None], available_values: Iterator[CommonSimDemographicType] = None, exclude_values: Iterator[CommonSimDemographicType] = None):
         super().__init__()
@@ -59,7 +59,7 @@ class CommonChooseSimDemographicTypesDialog(_HasS4CLLog):
         self.log.format_with_message('Choosing Sim demographic types.', current_selections=current_selections)
 
         if not current_selections:
-            current_val_localized_string = CommonStringId.S4CL_NO_SIMS
+            current_val_localized_string = CommonStringId.TS4T_NO_SIMS
         else:
             current_val_localized_string = None
             for current_value in current_selections:
@@ -87,11 +87,11 @@ class CommonChooseSimDemographicTypesDialog(_HasS4CLLog):
             if _types is None:
                 _on_close()
                 return
-            if CommonStringId.S4CL_ALL_SIMS.name in _types:
+            if CommonStringId.TS4T_ALL_SIMS.name in _types:
                 on_submit(self._available_values)
                 _reopen(_current_selections=self._available_values)
                 return
-            if CommonStringId.S4CL_NO_SIMS.name in _types:
+            if CommonStringId.TS4T_NO_SIMS.name in _types:
                 on_submit(tuple())
                 _reopen(_current_selections=tuple())
                 return
@@ -101,10 +101,10 @@ class CommonChooseSimDemographicTypesDialog(_HasS4CLLog):
         option_dialog.add_option(
             CommonDialogSelectOption(
                 'ChooseAllSims',
-                CommonStringId.S4CL_ALL_SIMS.name,
+                CommonStringId.TS4T_ALL_SIMS.name,
                 CommonDialogOptionContext(
-                    CommonStringId.S4CL_ALL_SIMS,
-                    CommonStringId.S4CL_ALL_OPTIONS_WILL_BE_INCLUDED,
+                    CommonStringId.TS4T_ALL_SIMS,
+                    CommonStringId.TS4T_ALL_OPTIONS_WILL_BE_INCLUDED,
                     icon=CommonIconUtils.load_arrow_right_icon()
                 )
             )
@@ -113,10 +113,10 @@ class CommonChooseSimDemographicTypesDialog(_HasS4CLLog):
         option_dialog.add_option(
             CommonDialogSelectOption(
                 'ChooseNoSims',
-                CommonStringId.S4CL_NO_SIMS.name,
+                CommonStringId.TS4T_NO_SIMS.name,
                 CommonDialogOptionContext(
-                    CommonStringId.S4CL_NO_SIMS,
-                    CommonStringId.S4CL_NO_OPTIONS_WILL_BE_INCLUDED,
+                    CommonStringId.TS4T_NO_SIMS,
+                    CommonStringId.TS4T_NO_OPTIONS_WILL_BE_INCLUDED,
                     icon=CommonIconUtils.load_arrow_right_icon()
                 )
             )
@@ -165,10 +165,10 @@ class CommonChooseSimDemographicTypesDialog(_HasS4CLLog):
             self.open(title, description, current_values, lambda val: on_chosen(option_id, val))
 
         if not current_values:
-            current_val_localized_string = CommonStringId.S4CL_NO_SIMS
+            current_val_localized_string = CommonStringId.TS4T_NO_SIMS
         else:
             if CommonCollectionUtils.lists_are_equal(sorted(current_values), sorted(self._available_values)):
-                current_val_localized_string = CommonStringId.S4CL_ALL_SIMS
+                current_val_localized_string = CommonStringId.TS4T_ALL_SIMS
             else:
                 current_val_localized_string = None
                 for current_value in current_values:

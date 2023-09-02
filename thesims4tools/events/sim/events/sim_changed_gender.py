@@ -13,8 +13,8 @@ from thesims4tools.enums.common_gender import CommonGender
 from thesims4tools.events.event_handling.common_event import CommonEvent
 
 
-class S4CLSimChangedGenderEvent(CommonEvent):
-    """S4CLSimChangedGenderEvent(sim_info, old_gender, new_gender)
+class TS4TSimChangedGenderEvent(CommonEvent):
+    """TS4TSimChangedGenderEvent(sim_info, old_gender, new_gender)
 
     An event that occurs when a Sim has changed their current gender.
 
@@ -35,7 +35,7 @@ class S4CLSimChangedGenderEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLSimChangedGenderEvent):
+            def handle_event(event_data: TS4TSimChangedGenderEvent):
                 pass
 
     :param sim_info: The Sim that changed.

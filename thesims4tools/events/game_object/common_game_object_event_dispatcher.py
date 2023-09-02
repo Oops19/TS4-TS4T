@@ -13,18 +13,18 @@ from typing import Any
 from objects.game_object import GameObject
 from objects.script_object import ScriptObject
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.game_object.events.game_object_added_to_inventory import S4CLGameObjectAddedToInventoryEvent
-from thesims4tools.events.game_object.events.game_object_pre_despawned import S4CLGameObjectPreDespawnedEvent
-from thesims4tools.events.game_object.events.game_object_pre_deleted import S4CLGameObjectPreDeletedEvent
-from thesims4tools.events.game_object.events.game_object_initialized import S4CLGameObjectInitializedEvent
-from thesims4tools.events.game_object.events.game_object_loaded import S4CLGameObjectLoadedEvent
+from thesims4tools.events.game_object.events.game_object_added_to_inventory import TS4TGameObjectAddedToInventoryEvent
+from thesims4tools.events.game_object.events.game_object_pre_despawned import TS4TGameObjectPreDespawnedEvent
+from thesims4tools.events.game_object.events.game_object_pre_deleted import TS4TGameObjectPreDeletedEvent
+from thesims4tools.events.game_object.events.game_object_initialized import TS4TGameObjectInitializedEvent
+from thesims4tools.events.game_object.events.game_object_loaded import TS4TGameObjectLoadedEvent
 from thesims4tools.events.game_object.events.game_object_pre_removed_from_inventory import \
-    S4CLGameObjectPreRemovedFromInventoryEvent
-from thesims4tools.events.game_object.events.game_object_spawned import S4CLGameObjectSpawnedEvent
+    TS4TGameObjectPreRemovedFromInventoryEvent
+from thesims4tools.events.game_object.events.game_object_spawned import TS4TGameObjectSpawnedEvent
 from thesims4tools.events.game_object.events.game_object_added_to_game_object_inventory import \
-    S4CLGameObjectAddedToGameObjectInventoryEvent
+    TS4TGameObjectAddedToGameObjectInventoryEvent
 from thesims4tools.events.game_object.events.game_object_pre_removed_from_game_object_inventory import \
-    S4CLGameObjectPreRemovedFromGameObjectInventoryEvent
+    TS4TGameObjectPreRemovedFromGameObjectInventoryEvent
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.common_service import CommonService
 from thesims4tools.utils.common_injection_utils import CommonInjectionUtils
@@ -39,34 +39,34 @@ class CommonGameObjectEventDispatcherService(CommonService):
     """
 
     def _on_game_object_init(self, game_object: GameObject, *_, **__) -> bool:
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectInitializedEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectInitializedEvent(game_object))
 
     def _on_game_object_load(self, game_object: GameObject, *_, **__) -> bool:
         from thesims4tools.events.zone_spin.common_zone_spin_event_dispatcher import CommonZoneSpinEventDispatcher
         if CommonZoneSpinEventDispatcher.get().game_loading:
             return False
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectLoadedEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectLoadedEvent(game_object))
 
     def _on_game_object_spawned(self, game_object: GameObject, *_, **__) -> bool:
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectSpawnedEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectSpawnedEvent(game_object))
 
     def _on_game_object_despawned(self, game_object: GameObject, *_, **__) -> bool:
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectPreDespawnedEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectPreDespawnedEvent(game_object))
 
     def _on_game_object_destroy(self, game_object: GameObject, *_, **__) -> bool:
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectPreDeletedEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectPreDeletedEvent(game_object))
 
     def _on_game_object_added_to_inventory(self, game_object: GameObject, *_, **__) -> bool:
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectAddedToInventoryEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectAddedToInventoryEvent(game_object))
 
     def _on_game_object_pre_removed_from_inventory(self, game_object: GameObject, *_, **__) -> bool:
-        return CommonEventRegistry.get().dispatch(S4CLGameObjectPreRemovedFromInventoryEvent(game_object))
+        return CommonEventRegistry.get().dispatch(TS4TGameObjectPreRemovedFromInventoryEvent(game_object))
 
     def _on_game_object_added_to_game_object_inventory(self, game_object: GameObject, added_object: GameObject) -> None:
-        CommonEventRegistry.get().dispatch(S4CLGameObjectAddedToGameObjectInventoryEvent(game_object, added_object))
+        CommonEventRegistry.get().dispatch(TS4TGameObjectAddedToGameObjectInventoryEvent(game_object, added_object))
 
     def _on_game_object_pre_removed_from_game_object_inventory(self, game_object: GameObject, removed_object: GameObject) -> None:
-        CommonEventRegistry.get().dispatch(S4CLGameObjectPreRemovedFromGameObjectInventoryEvent(game_object, removed_object))
+        CommonEventRegistry.get().dispatch(TS4TGameObjectPreRemovedFromGameObjectInventoryEvent(game_object, removed_object))
 
 
 @CommonInjectionUtils.inject_safely_into(ModInfo.get_identity(), GameObject, GameObject.__init__.__name__, handle_exceptions=False)

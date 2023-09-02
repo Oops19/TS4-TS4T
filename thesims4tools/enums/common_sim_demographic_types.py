@@ -55,6 +55,7 @@ class CommonSimDemographicType(CommonVersionedIntFlags):
     LARGE_DOG: 'CommonSimDemographicType' = ...
     CAT: 'CommonSimDemographicType' = ...
     FOX: 'CommonSimDemographicType' = ...
+    HORSE: 'CommonSimDemographicType' = ...
 
     # Obsolete
     PLAYER_SIMS: 'CommonSimDemographicType' = ...
@@ -108,9 +109,9 @@ class CommonSimDemographicType(CommonVersionedIntFlags):
     def to_display_name(value: 'CommonSimDemographicType') -> Union[int, LocalizedString]:
         """Convert a value to a display name."""
         mappings = {
-            CommonSimDemographicType.HOUSEHOLD: CommonStringId.S4CL_HOUSEHOLD,
-            CommonSimDemographicType.NON_HOUSEHOLD: CommonStringId.S4CL_NON_HOUSEHOLD,
-            CommonSimDemographicType.CURRENTLY_CONTROLLED: CommonStringId.S4CL_CURRENTLY_CONTROLLED,
+            CommonSimDemographicType.HOUSEHOLD: CommonStringId.TS4T_HOUSEHOLD,
+            CommonSimDemographicType.NON_HOUSEHOLD: CommonStringId.TS4T_NON_HOUSEHOLD,
+            CommonSimDemographicType.CURRENTLY_CONTROLLED: CommonStringId.TS4T_CURRENTLY_CONTROLLED,
             # Gender
             CommonSimDemographicType.MALE: CommonStringId.MALE,
             CommonSimDemographicType.FEMALE: CommonStringId.FEMALE,
@@ -123,22 +124,23 @@ class CommonSimDemographicType(CommonVersionedIntFlags):
             CommonSimDemographicType.YOUNG_ADULT: CommonStringId.YOUNG_ADULT,
             CommonSimDemographicType.ELDER: CommonStringId.ELDER,
             # Occult
-            CommonSimDemographicType.ALIEN: CommonStringId.S4CL_ALIEN,
-            CommonSimDemographicType.GHOST: CommonStringId.S4CL_GHOST,
-            CommonSimDemographicType.MERMAID: CommonStringId.S4CL_MERMAID,
-            CommonSimDemographicType.NON_OCCULT: CommonStringId.S4CL_NON_OCCULT,
-            CommonSimDemographicType.PLANT: CommonStringId.S4CL_PLANT_SIM,
-            CommonSimDemographicType.ROBOT: CommonStringId.S4CL_ROBOT,
-            CommonSimDemographicType.SKELETON: CommonStringId.S4CL_SKELETON,
-            CommonSimDemographicType.VAMPIRE: CommonStringId.S4CL_VAMPIRE,
-            CommonSimDemographicType.WEREWOLF: CommonStringId.S4CL_WEREWOLF,
-            CommonSimDemographicType.WITCH: CommonStringId.S4CL_WITCH,
+            CommonSimDemographicType.ALIEN: CommonStringId.TS4T_ALIEN,
+            CommonSimDemographicType.GHOST: CommonStringId.TS4T_GHOST,
+            CommonSimDemographicType.MERMAID: CommonStringId.TS4T_MERMAID,
+            CommonSimDemographicType.NON_OCCULT: CommonStringId.TS4T_NON_OCCULT,
+            CommonSimDemographicType.PLANT: CommonStringId.TS4T_PLANT_SIM,
+            CommonSimDemographicType.ROBOT: CommonStringId.TS4T_ROBOT,
+            CommonSimDemographicType.SKELETON: CommonStringId.TS4T_SKELETON,
+            CommonSimDemographicType.VAMPIRE: CommonStringId.TS4T_VAMPIRE,
+            CommonSimDemographicType.WEREWOLF: CommonStringId.TS4T_WEREWOLF,
+            CommonSimDemographicType.WITCH: CommonStringId.TS4T_WITCH,
             # Species
             CommonSimDemographicType.HUMAN: CommonStringId.HUMAN,
             CommonSimDemographicType.SMALL_DOG: CommonStringId.SMALL_DOG,
             CommonSimDemographicType.LARGE_DOG: CommonStringId.LARGE_DOG,
             CommonSimDemographicType.CAT: CommonStringId.CAT,
             CommonSimDemographicType.FOX: CommonStringId.FOX,
+            CommonSimDemographicType.HORSE: CommonStringId.HORSE,
         }
         return mappings.get(value, value.name if hasattr(value, 'name') else str(value))
 
@@ -146,9 +148,9 @@ class CommonSimDemographicType(CommonVersionedIntFlags):
     def to_display_description(value: 'CommonSimDemographicType') -> Union[int, LocalizedString]:
         """Convert a value to a display description."""
         mappings = {
-            CommonSimDemographicType.HOUSEHOLD: CommonStringId.S4CL_HOUSEHOLD_DESCRIPTION,
-            CommonSimDemographicType.NON_HOUSEHOLD: CommonStringId.S4CL_NON_HOUSEHOLD_DESCRIPTION,
-            CommonSimDemographicType.CURRENTLY_CONTROLLED: CommonStringId.S4CL_CURRENTLY_CONTROLLED_DESCRIPTION,
+            CommonSimDemographicType.HOUSEHOLD: CommonStringId.TS4T_HOUSEHOLD_DESCRIPTION,
+            CommonSimDemographicType.NON_HOUSEHOLD: CommonStringId.TS4T_NON_HOUSEHOLD_DESCRIPTION,
+            CommonSimDemographicType.CURRENTLY_CONTROLLED: CommonStringId.TS4T_CURRENTLY_CONTROLLED_DESCRIPTION,
         }
         return mappings.get(value, 0)
 

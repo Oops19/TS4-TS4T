@@ -21,7 +21,7 @@ from sims4.resources import Types
 from thesims4tools.classes.testing.common_execution_result import CommonExecutionResult
 from thesims4tools.classes.testing.common_test_result import CommonTestResult
 from thesims4tools.enums.traits_enum import CommonTraitId
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.notifications.common_basic_notification import CommonBasicNotification
 from thesims4tools.services.commands.common_console_command import CommonConsoleCommandArgument, \
@@ -32,7 +32,7 @@ from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 from traits.traits import Trait
 
 
-class CommonTraitUtils(_HasS4CLClassLog):
+class CommonTraitUtils(_HasTS4TClassLog):
     """Utilities for manipulating Traits on Sims.
 
     """

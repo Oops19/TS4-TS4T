@@ -14,8 +14,8 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class S4CLZoneSaveEvent(CommonEvent):
-    """S4CLZoneSaveEvent(zone, save_slot_data=None, game_loaded=False, game_loading=False)
+class TS4TZoneSaveEvent(CommonEvent):
+    """TS4TZoneSaveEvent(zone, save_slot_data=None, game_loaded=False, game_loading=False)
 
     An event that occurs upon a Zone being saved (Before it has been saved).
 
@@ -40,7 +40,7 @@ class S4CLZoneSaveEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLZoneSaveEvent):
+            def handle_event(event_data: TS4TZoneSaveEvent):
                 pass
 
     :param zone: The Zone being saved.

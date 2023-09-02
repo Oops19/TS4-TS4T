@@ -11,7 +11,7 @@ All modifications by and copyright Oops19.
 from typing import Callable, Any, Type, List
 
 from sims4.tuning.instance_manager import InstanceManager
-from thesims4tools.logging._has_ts4t_log import _HasS4CLLog
+from thesims4tools.logging._has_ts4t_log import _HasTS4TLog
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.common_service import CommonService
 from thesims4tools.services.resources.modification_handlers.common_instance_manager_modification_handler import \
@@ -19,7 +19,7 @@ from thesims4tools.services.resources.modification_handlers.common_instance_mana
 from thesims4tools.utils.common_injection_utils import CommonInjectionUtils
 
 
-class CommonInstanceManagerModificationRegistry(CommonService, _HasS4CLLog):
+class CommonInstanceManagerModificationRegistry(CommonService, _HasTS4TLog):
     """A registry containing handlers that manipulate and modify instance managers.
 
     """

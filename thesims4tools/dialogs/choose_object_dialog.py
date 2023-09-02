@@ -392,7 +392,7 @@ class CommonChooseObjectDialog(CommonChooseDialog):
                 self.log.format_with_message('Adding Previous row.', page=page, number_of_pages=number_of_pages)
                 previous_choice = ObjectPickerRow(
                     option_id=len(self.rows) + 2,
-                    name=CommonLocalizationUtils.create_localized_string(CommonStringId.S4CL_EXCLAMATION_EXCLAMATION_STRING, tokens=(CommonStringId.PREVIOUS,)),
+                    name=CommonLocalizationUtils.create_localized_string(CommonStringId.TS4T_EXCLAMATION_EXCLAMATION_STRING, tokens=(CommonStringId.PREVIOUS,)),
                     row_description=None,
                     row_tooltip=CommonLocalizationUtils.create_localized_tooltip(CommonStringId.PREVIOUS),
                     icon=CommonIconUtils.load_arrow_left_icon(),
@@ -406,7 +406,7 @@ class CommonChooseObjectDialog(CommonChooseDialog):
                 self.log.format_with_message('Adding Next row.', page=page, number_of_pages=number_of_pages)
                 next_choice = ObjectPickerRow(
                     option_id=len(self.rows) + 1,
-                    name=CommonLocalizationUtils.create_localized_string(CommonStringId.S4CL_EXCLAMATION_EXCLAMATION_STRING, tokens=(CommonStringId.NEXT,)),
+                    name=CommonLocalizationUtils.create_localized_string(CommonStringId.TS4T_EXCLAMATION_EXCLAMATION_STRING, tokens=(CommonStringId.NEXT,)),
                     row_description=None,
                     row_tooltip=CommonLocalizationUtils.create_localized_tooltip(CommonStringId.NEXT),
                     icon=CommonIconUtils.load_arrow_right_icon(),

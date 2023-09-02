@@ -23,7 +23,7 @@ from thesims4tools.utils.common_resource_utils import CommonResourceUtils
 ON_RTD = os.environ.get('READTHEDOCS', None) == 'True'
 
 
-class S4CLConfiguration(HasLog, CommonService):
+class TS4TConfiguration(HasLog, CommonService):
     """ Manages configuration via the thesims4tools.config file. """
     _CONFIGURATION_FILE_NAME = 'thesims4tools.config'
     if not ON_RTD:
@@ -48,10 +48,10 @@ class S4CLConfiguration(HasLog, CommonService):
     def __init__(self) -> None:
         self._config_data = dict()
         super().__init__()
-        self._config_data: Dict[str, Any] = S4CLConfiguration._DEFAULT_CONFIG_DATA.copy()
+        self._config_data: Dict[str, Any] = TS4TConfiguration._DEFAULT_CONFIG_DATA.copy()
         try:
             file_path = os.path.dirname(os.path.dirname(os.path.dirname(self.mod_identity.file_path.rstrip('/').rstrip('\\'))))
-            full_file_path = os.path.join(file_path, S4CLConfiguration._CONFIGURATION_FILE_NAME)
+            full_file_path = os.path.join(file_path, TS4TConfiguration._CONFIGURATION_FILE_NAME)
             try:
                 if os.path.exists(full_file_path):
                     existing_config_data = CommonJSONIOUtils.load_from_file(full_file_path) or dict()
@@ -62,7 +62,7 @@ class S4CLConfiguration(HasLog, CommonService):
                 else:
                     CommonJSONIOUtils.write_to_file(full_file_path, self._config_data)
             except Exception as ex:
-                CommonExceptionHandler.log_exception(self.mod_identity, 'Failed to read the configuration file named {} at path "{}"!'.format(S4CLConfiguration._CONFIGURATION_FILE_NAME, full_file_path), exception=ex)
+                CommonExceptionHandler.log_exception(self.mod_identity, 'Failed to read the configuration file named {} at path "{}"!'.format(TS4TConfiguration._CONFIGURATION_FILE_NAME, full_file_path), exception=ex)
                 if not os.path.exists(full_file_path):
                     # noinspection PyBroadException
                     try:
@@ -70,7 +70,7 @@ class S4CLConfiguration(HasLog, CommonService):
                     except:
                         pass
         except Exception as ex:
-            CommonExceptionHandler.log_exception(self.mod_identity, 'Failed to format the file path to the S4CL configuration file.', exception=ex)
+            CommonExceptionHandler.log_exception(self.mod_identity, 'Failed to format the file path to the TS4T configuration file.', exception=ex)
 
     @property
     def persist_mod_data_per_save_slot(self) -> bool:
@@ -88,7 +88,7 @@ class S4CLConfiguration(HasLog, CommonService):
 
     @property
     def max_output_file_size_in_bytes(self) -> int:
-        """ The maximum size a file created by S4CL can be in bytes. """
+        """ The maximum size a file created by TS4T can be in bytes. """
         if self._config_data is None or not self._config_data:
             return False
         return self._config_data.get('max_output_file_size_in_bytes', 524288000)

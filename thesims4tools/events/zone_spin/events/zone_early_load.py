@@ -12,12 +12,12 @@ from thesims4tools.events.event_handling.common_event import CommonEvent
 from zone import Zone
 
 
-class S4CLZoneEarlyLoadEvent(CommonEvent):
-    """S4CLZoneEarlyLoadEvent(zone, game_loaded=False, game_loading=False)
+class TS4TZoneEarlyLoadEvent(CommonEvent):
+    """TS4TZoneEarlyLoadEvent(zone, game_loaded=False, game_loading=False)
 
     An event that occurs when a Zone has loaded.
 
-    .. note:: This event occurs before the :class:`.S4CLZoneLateLoadEvent`
+    .. note:: This event occurs before the :class:`.TS4TZoneLateLoadEvent`
 
     :Example usage:
 
@@ -36,7 +36,7 @@ class S4CLZoneEarlyLoadEvent(CommonEvent):
             # - The argument passed to "handle_events" is the name of your Mod.
             @staticmethod
             @CommonEventRegistry.handle_events(ModInfo.get_identity().name)
-            def handle_event(event_data: S4CLZoneEarlyLoadEvent):
+            def handle_event(event_data: TS4TZoneEarlyLoadEvent):
                 pass
 
     :param zone: The Zone that was loaded.

@@ -11,11 +11,11 @@ All modifications by and copyright Oops19.
 from typing import Union
 from routing.walkstyle.walkstyle_tuning import Walkstyle
 from sims.sim_info import SimInfo
-from thesims4tools.logging._has_ts4t_class_log import _HasS4CLClassLog
+from thesims4tools.logging._has_ts4t_class_log import _HasTS4TClassLog
 from thesims4tools.utils.sims.common_sim_utils import CommonSimUtils
 
 
-class CommonSimWalkstyleUtils(_HasS4CLClassLog):
+class CommonSimWalkstyleUtils(_HasTS4TClassLog):
     """Utilities for manipulating the Walkstyle of Sims.
 
     """

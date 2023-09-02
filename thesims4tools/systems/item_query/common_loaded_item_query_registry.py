@@ -17,8 +17,8 @@ from thesims4tools.systems.item_query.query.common_loaded_item_organizer import 
 from thesims4tools.systems.item_query.dtos.common_loaded_item import CommonLoadedItem
 from thesims4tools.systems.item_query.common_loaded_item_registry import CommonLoadedItemRegistry
 from thesims4tools.classes.time.common_stop_watch import CommonStopWatch
-from thesims4tools.events.zone_spin.events.zone_early_load import S4CLZoneEarlyLoadEvent
-from thesims4tools.events.zone_spin.events.zone_late_load import S4CLZoneLateLoadEvent
+from thesims4tools.events.zone_spin.events.zone_early_load import TS4TZoneEarlyLoadEvent
+from thesims4tools.events.zone_spin.events.zone_late_load import TS4TZoneLateLoadEvent
 from thesims4tools.logging.has_log import HasLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
 from thesims4tools.notifications.common_basic_notification import CommonBasicNotification
@@ -508,7 +508,7 @@ class CommonLoadedItemQueryRegistry(CommonService, HasLog, Generic[CommonLoadedI
         raise NotImplementedError()
 
     @classmethod
-    def _load_items_on_zone_early_load(cls, event_data: S4CLZoneEarlyLoadEvent, show_loading_notification: bool = False):
+    def _load_items_on_zone_early_load(cls, event_data: TS4TZoneEarlyLoadEvent, show_loading_notification: bool = False):
         if event_data.game_loaded:
             # If the game is already loaded, we've already loaded the data once.
             return False
@@ -516,7 +516,7 @@ class CommonLoadedItemQueryRegistry(CommonService, HasLog, Generic[CommonLoadedI
         return True
 
     @classmethod
-    def _load_items_on_zone_late_load(cls, event_data: S4CLZoneLateLoadEvent, show_loading_notification: bool = True):
+    def _load_items_on_zone_late_load(cls, event_data: TS4TZoneLateLoadEvent, show_loading_notification: bool = True):
         if event_data.game_loaded:
             # If the game is already loaded, we've already loaded the data once.
             return False
@@ -524,7 +524,7 @@ class CommonLoadedItemQueryRegistry(CommonService, HasLog, Generic[CommonLoadedI
         return True
 
     @classmethod
-    def _notify_items_loaded_on_zone_late_load(cls, event_data: S4CLZoneLateLoadEvent):
+    def _notify_items_loaded_on_zone_late_load(cls, event_data: TS4TZoneLateLoadEvent):
         if event_data.game_loaded:
             # If the game is already loaded, we've already notified about the data once.
             return False

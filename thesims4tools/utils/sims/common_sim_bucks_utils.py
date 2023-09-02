@@ -589,7 +589,7 @@ def _common_set_bucks(
     sim_info: SimInfo = None
 ):
     output(f'Setting {bucks_type.name} Bucks to {amount} for Sim {sim_info}')
-    result = CommonSimBucksUtils.set_bucks(sim_info, bucks_type, amount, reason='S4CL Console Command')
+    result = CommonSimBucksUtils.set_bucks(sim_info, bucks_type, amount, reason='TS4T Console Command')
     if result:
         output(f'Successfully set {bucks_type.name} Bucks to {amount} for Sim {sim_info}')
     else:
@@ -619,7 +619,7 @@ def _common_add_bucks(
     if bucks_type is None:
         return False
     output(f'Adding {amount} {bucks_type.name} Bucks to Sim {sim_info}')
-    result = CommonSimBucksUtils.modify_bucks(sim_info, bucks_type, amount, reason='S4CL Console Command')
+    result = CommonSimBucksUtils.modify_bucks(sim_info, bucks_type, amount, reason='TS4T Console Command')
     if result:
         output(f'Successfully added {amount} {bucks_type.name} Bucks to Sim {sim_info}')
     else:
@@ -649,7 +649,7 @@ def _common_remove_bucks(
     if bucks_type is None:
         return False
     output(f'Removing {amount} {bucks_type.name} Bucks from Sim {sim_info}')
-    result = CommonSimBucksUtils.modify_bucks(sim_info, bucks_type, -amount, reason='S4CL Console Command')
+    result = CommonSimBucksUtils.modify_bucks(sim_info, bucks_type, -amount, reason='TS4T Console Command')
     if result:
         output(f'Successfully removed {amount} {bucks_type.name} Bucks from Sim {sim_info}')
     else:

@@ -10,8 +10,8 @@ All modifications by and copyright Oops19.
 
 from typing import Any
 
-from thesims4tools.events.build_buy.events.build_buy_enter import S4CLBuildBuyEnterEvent
-from thesims4tools.events.build_buy.events.build_buy_exit import S4CLBuildBuyExitEvent
+from thesims4tools.events.build_buy.events.build_buy_enter import TS4TBuildBuyEnterEvent
+from thesims4tools.events.build_buy.events.build_buy_exit import TS4TBuildBuyExitEvent
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
 from thesims4tools.logging.has_class_log import HasClassLog
 from thesims4tools.mod_support.mod_identity import CommonModIdentity
@@ -40,10 +40,10 @@ class CommonBuildBuyEventDispatcherService(CommonService, HasClassLog):
         return 'ts4t_build_buy_event_dispatcher'
 
     def _on_build_buy_enter(self, zone: Zone, *_, **__):
-        return CommonEventRegistry.get().dispatch(S4CLBuildBuyEnterEvent(zone))
+        return CommonEventRegistry.get().dispatch(TS4TBuildBuyEnterEvent(zone))
 
     def _on_build_buy_exit(self, zone: Zone, *_, **__):
-        return CommonEventRegistry.get().dispatch(S4CLBuildBuyExitEvent(zone))
+        return CommonEventRegistry.get().dispatch(TS4TBuildBuyExitEvent(zone))
 
 
 @CommonInjectionUtils.inject_safely_into(ModInfo.get_identity(), Zone, Zone.on_build_buy_enter.__name__)
@@ -51,7 +51,7 @@ def _common_build_buy_enter(original, self, *args, **kwargs) -> Any:
     try:
         result = original(self, *args, **kwargs)
     except Exception as ex:
-        CommonBuildBuyEventDispatcherService.get_log().format_error_with_message('An error occurred when performing Zone.on_build_buy_enter. (This exception is not caused by S4CL, but rather caught)', owner=self, argles=args, kwargles=kwargs, exception=ex)
+        CommonBuildBuyEventDispatcherService.get_log().format_error_with_message('An error occurred when performing Zone.on_build_buy_enter. (This exception is not caused by TS4T, but rather caught)', owner=self, argles=args, kwargles=kwargs, exception=ex)
         return
     CommonBuildBuyEventDispatcherService.get()._on_build_buy_enter(self, *args, **kwargs)
     return result
@@ -62,7 +62,7 @@ def _common_build_buy_exit(original, self, *args, **kwargs) -> Any:
     try:
         result = original(self, *args, **kwargs)
     except Exception as ex:
-        CommonBuildBuyEventDispatcherService.get_log().format_error_with_message('An error occurred when performing Zone.on_build_buy_exit. (This exception is not caused by S4CL, but rather caught)', owner=self, argles=args, kwargles=kwargs, exception=ex)
+        CommonBuildBuyEventDispatcherService.get_log().format_error_with_message('An error occurred when performing Zone.on_build_buy_exit. (This exception is not caused by TS4T, but rather caught)', owner=self, argles=args, kwargles=kwargs, exception=ex)
         return
     CommonBuildBuyEventDispatcherService.get()._on_build_buy_exit(self, *args, **kwargs)
     return result

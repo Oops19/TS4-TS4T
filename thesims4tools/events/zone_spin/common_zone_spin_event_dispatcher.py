@@ -12,13 +12,13 @@ from typing import Any
 
 from server.client import Client
 from thesims4tools.events.event_handling.common_event_registry import CommonEventRegistry
-from thesims4tools.events.zone_spin.events.zone_early_load import S4CLZoneEarlyLoadEvent
-from thesims4tools.events.zone_spin.events.zone_late_load import S4CLZoneLateLoadEvent
-from thesims4tools.events.zone_spin.events.zone_manager_start_event import S4CLZoneManagerStartEvent
+from thesims4tools.events.zone_spin.events.zone_early_load import TS4TZoneEarlyLoadEvent
+from thesims4tools.events.zone_spin.events.zone_late_load import TS4TZoneLateLoadEvent
+from thesims4tools.events.zone_spin.events.zone_manager_start_event import TS4TZoneManagerStartEvent
 from thesims4tools.events.zone_spin.events.zone_post_load import \
-    S4CLZonePostLoadEvent
-from thesims4tools.events.zone_spin.events.zone_save import S4CLZoneSaveEvent
-from thesims4tools.events.zone_spin.events.zone_teardown import S4CLZoneTeardownEvent
+    TS4TZonePostLoadEvent
+from thesims4tools.events.zone_spin.events.zone_save import TS4TZoneSaveEvent
+from thesims4tools.events.zone_spin.events.zone_teardown import TS4TZoneTeardownEvent
 from thesims4tools.modinfo import ModInfo
 from thesims4tools.services.common_service import CommonService
 from thesims4tools.utils.common_injection_utils import CommonInjectionUtils
@@ -56,25 +56,25 @@ class CommonZoneSpinEventDispatcher(CommonService):
         return self._game_loading
 
     def _on_early_zone_load(self, zone: Zone):
-        CommonEventRegistry.get().dispatch(S4CLZoneEarlyLoadEvent(zone, game_loaded=self.game_loaded, game_loading=self.game_loading))
+        CommonEventRegistry.get().dispatch(TS4TZoneEarlyLoadEvent(zone, game_loaded=self.game_loaded, game_loading=self.game_loading))
 
     def _on_late_zone_load(self, zone: Zone, household_id: int, active_sim_id: int):
-        CommonEventRegistry.get().dispatch(S4CLZoneLateLoadEvent(zone, household_id, active_sim_id, game_loaded=self.game_loaded, game_loading=self.game_loading))
+        CommonEventRegistry.get().dispatch(TS4TZoneLateLoadEvent(zone, household_id, active_sim_id, game_loaded=self.game_loaded, game_loading=self.game_loading))
         self._game_loaded = True
         self._game_loading = False
 
     def _on_zone_teardown(self, zone: Zone, client: Client):
-        CommonEventRegistry.get().dispatch(S4CLZoneTeardownEvent(zone, client, game_loaded=self.game_loaded, game_loading=self.game_loading))
+        CommonEventRegistry.get().dispatch(TS4TZoneTeardownEvent(zone, client, game_loaded=self.game_loaded, game_loading=self.game_loading))
         self._game_loading = True
 
     def _on_zone_save(self, zone: Zone, save_slot_data: Any = None):
-        CommonEventRegistry.get().dispatch(S4CLZoneSaveEvent(zone, save_slot_data=save_slot_data, game_loaded=self.game_loaded, game_loading=self.game_loading))
+        CommonEventRegistry.get().dispatch(TS4TZoneSaveEvent(zone, save_slot_data=save_slot_data, game_loaded=self.game_loaded, game_loading=self.game_loading))
 
     def _on_loading_screen_animation_finished(self, zone: Zone):
-        CommonEventRegistry.get().dispatch(S4CLZonePostLoadEvent(zone, game_loaded=self.game_loaded, game_loading=self.game_loading))
+        CommonEventRegistry.get().dispatch(TS4TZonePostLoadEvent(zone, game_loaded=self.game_loaded, game_loading=self.game_loading))
 
     def _on_zone_manager_start(self, zone_manager: ZoneManager):
-        CommonEventRegistry.get().dispatch(S4CLZoneManagerStartEvent(zone_manager))
+        CommonEventRegistry.get().dispatch(TS4TZoneManagerStartEvent(zone_manager))
 
 
 @CommonInjectionUtils.inject_safely_into(ModInfo.get_identity(), Zone, Zone.load_zone.__name__, handle_exceptions=False)
