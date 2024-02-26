@@ -14,4 +14,4 @@ They may make use of another library with similar features in case one is instal
 #### TS4 Mods hosted on GitHub
 My mods hosted on GitHub are fully supported and have an issue tracker.
 Also they don't suffer from any compatibility issues.
-According to MTS something within https://modthesims.info/rubrics/3892/637/TS4/ applies to the mods hosted on GitHub.
+According to MTS something within https://modthesims.info/rubrics/3892/637/TS4/ applies to my mods hosted on GitHub.
